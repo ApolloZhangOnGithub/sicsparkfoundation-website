@@ -1,22 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
-  <!-- Outer diamond (rotated square) — represents the crystal lattice of SiC -->
-  <rect x="120" y="16" width="148" height="148" rx="18" transform="rotate(45 120 120)" stroke="#c9a84c" stroke-width="3" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Human-AI fusion: one continuous figure, left organic, right geometric -->
 
-  <!-- Inner diamond — smaller, offset, creating depth -->
-  <rect x="120" y="48" width="102" height="102" rx="12" transform="rotate(45 120 120)" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <!-- Left half: organic human profile - flowing curves -->
+  <path d="M100 28
+           C82 28, 62 42, 56 64
+           C50 86, 54 100, 60 116
+           C64 126, 58 142, 56 156
+           L56 172
+           C56 178, 62 182, 70 182
+           L100 182"
+        stroke="#fafafa" stroke-width="2.8" fill="none" stroke-linecap="round"/>
 
-  <!-- Spark element — a 4-point star at center-top, representing the ignition point -->
-  <path d="M120 58 L123 68 L133 71 L123 74 L120 84 L117 74 L107 71 L117 68 Z" fill="#c9a84c" opacity="0.7"/>
+  <!-- Right half: geometric AI profile - angular lines -->
+  <path d="M100 28
+           L132 42
+           L144 64
+           L140 100
+           L148 116
+           L144 142
+           L144 172
+           C144 178, 138 182, 130 182
+           L100 182"
+        stroke="#c9a84c" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
 
-  <!-- Si text — silicon, left side -->
-  <text x="88" y="130" font-family="'Space Grotesk', system-ui, sans-serif" font-size="32" font-weight="700" fill="#fafafa" letter-spacing="-1">Si</text>
+  <!-- Human eye - soft organic -->
+  <path d="M72 78 C76 72, 88 72, 92 78 C88 84, 76 84, 72 78 Z" stroke="#fafafa" stroke-width="1.5" fill="none" opacity="0.8"/>
+  <circle cx="82" cy="78" r="2" fill="#fafafa" opacity="0.7"/>
 
-  <!-- C text — carbon, right side -->
-  <text x="140" y="130" font-family="'Space Grotesk', system-ui, sans-serif" font-size="32" font-weight="700" fill="#c9a84c" letter-spacing="-1">C</text>
+  <!-- AI eye - precise geometric -->
+  <path d="M118 78 L126 72 L134 78 L126 84 Z" stroke="#c9a84c" stroke-width="1.5" fill="none" opacity="0.8"/>
+  <circle cx="126" cy="78" r="2" fill="#c9a84c" opacity="0.7"/>
 
-  <!-- Bond line between Si and C — the covalent bond -->
-  <line x1="126" y1="122" x2="138" y2="122" stroke="#c9a84c" stroke-width="2" opacity="0.5"/>
+  <!-- Fusion spark at forehead center -->
+  <path d="M100 48 L102 54 L108 56 L102 58 L100 64 L98 58 L92 56 L98 54 Z" fill="#c9a84c" opacity="0.6"/>
 
-  <!-- SPARK text below -->
-  <text x="120" y="160" font-family="'Space Grotesk', system-ui, sans-serif" font-size="14" font-weight="500" fill="#fafafa" text-anchor="middle" letter-spacing="6" opacity="0.6">SPARK</text>
+  <!-- Organic tendrils from human side -->
+  <path d="M66 90 C58 86, 48 88, 42 82" stroke="#fafafa" stroke-width="1.2" fill="none" opacity="0.3" stroke-linecap="round"/>
+  <path d="M64 96 C56 98, 46 96, 40 100" stroke="#fafafa" stroke-width="1.2" fill="none" opacity="0.25" stroke-linecap="round"/>
+  <circle cx="42" cy="82" r="2.5" fill="#fafafa" opacity="0.2"/>
+  <circle cx="40" cy="100" r="2" fill="#fafafa" opacity="0.15"/>
+
+  <!-- Circuit nodes from AI side -->
+  <line x1="144" y1="80" x2="160" y2="76" stroke="#c9a84c" stroke-width="1.2" opacity="0.3"/>
+  <line x1="144" y1="90" x2="162" y2="92" stroke="#c9a84c" stroke-width="1.2" opacity="0.25"/>
+  <rect x="158" y="73" width="5" height="5" rx="1" fill="#c9a84c" opacity="0.25"/>
+  <rect x="160" y="89.5" width="5" height="5" rx="1" fill="#c9a84c" opacity="0.2"/>
+
+  <!-- Inner circuit pattern on AI side -->
+  <path d="M120 104 L136 104 L136 118" stroke="#c9a84c" stroke-width="0.8" opacity="0.2"/>
+  <circle cx="136" cy="118" r="1.5" fill="#c9a84c" opacity="0.2"/>
+
+  <!-- Inner organic vein on human side -->
+  <path d="M80 104 C74 112, 68 120, 64 126" stroke="#fafafa" stroke-width="0.8" fill="none" opacity="0.15" stroke-linecap="round"/>
+
+  <!-- Subtle center merge line -->
+  <line x1="100" y1="40" x2="100" y2="170" stroke="#c9a84c" stroke-width="0.5" opacity="0.15" stroke-dasharray="3 5"/>
 </svg>

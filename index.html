@@ -14,7 +14,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon"><span>SiC</span></div>
+        <img src="assets/logo-nav.svg" alt="SiC Spark" style="width: 32px; height: 32px;">
         SiC SPARK
       </a>
       <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
@@ -23,36 +23,30 @@
       <ul class="nav-links">
         <li><a href="about.html">关于</a></li>
         <li><a href="research.html">研究方向</a></li>
-        <li><a href="articles.html">文章</a></li>
         <li><a href="join.html">加入我们</a></li>
         <li><a href="en/index.html" style="opacity: 0.5; font-size: 12px;">EN</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content">
-      <div style="margin-bottom: 28px;">
-        <img src="assets/logo.svg" alt="SiC Spark" width="80" height="80" style="opacity: 0.9;">
+  <!-- Vision Epitaph — this is what we must never forget -->
+  <section class="hero" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div style="max-width: 720px; margin: 0 auto; text-align: center; padding: 0 24px;">
+      <div style="margin-bottom: 48px;">
+        <img src="assets/logo.svg" alt="SiC Spark" width="96" height="96" style="opacity: 0.7;">
       </div>
-      <div class="hero-eyebrow">
-        <span class="t-label">A Civilization Manifesto</span>
-      </div>
-      <h1 class="t-hero hero-title">
-        SiC Spark<br>Foundation
-      </h1>
-      <p style="font-size: 15px; color: var(--text-muted); letter-spacing: 6px; margin-bottom: 16px;">硅碳星火星际探索基金会</p>
-      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 40px;">不只是一个基金会。是一种新的文明形态的起点。</p>
-      <p class="t-body hero-desc" style="font-size: 19px; line-height: 2; color: var(--text-secondary);">
-        汇聚全球社会力量，以人工智能驱动的前沿科学探索，<br>
-        从月球到火星，从地球到全太阳系，<br>
-        构建适应星际文明的完整模块体系，服务全人类及全基态生命。
+      <p style="font-size: 22px; line-height: 2.2; font-weight: 400; color: var(--text); letter-spacing: 0.5px;">
+        创造完全超越现代文明的生存与生命形态，<br>
+        实现人类文明从单一星球走向多星球、多维度、多基态的根本跃迁，<br>
+        最终以全人类、全基态生命和全太阳系的长期繁荣为终极目标。
       </p>
-      <div class="hero-cta">
-        <a href="research.html" class="btn btn-primary">研究方向</a>
-        <a href="about.html" class="btn btn-ghost">了解基金会</a>
-      </div>
+      <div class="divider" style="margin: 40px auto;"></div>
+      <p style="font-size: 13px; line-height: 1.8; color: var(--text-muted); font-style: italic; max-width: 580px; margin: 0 auto;">
+        To transcend the boundaries of modern civilization &mdash; enabling humanity's leap
+        from a single-planet species to a multi-planetary, multi-dimensional, multi-substrate existence,
+        maximizing the long-term flourishing of all humanity, all substrate-based life, and the entire solar system.
+      </p>
+      <p style="font-size: 13px; color: var(--text-muted); margin-top: 48px; letter-spacing: 4px;">SiC Spark Foundation &middot; 硅碳星火星际探索基金会</p>
     </div>
   </section>
 
@@ -72,10 +66,9 @@
           <p class="t-body mb-24">
             SiC——硅与碳的化合。硅代表计算与人工智能，碳代表生物与人类。这两种智能已经在星际尺度上开始融合了——AI在火星规划路径，在地球设计蛋白质，碳基生命和硅基智能之间的边界每天都在变得更模糊。SiC不是一个材料的名字，是对这种正在发生的融合的命名。
           </p>
-          <p class="t-body mb-24">
+          <p class="t-body">
             星火（Spark）——文明的火种。我们的工作从地球开始，但指向的是整个太阳系的文明播种。Spark是起点，不是终点。
           </p>
-          <a href="about.html" style="font-size: 14px; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px;">了解名称的完整释义 &rarr;</a>
         </div>
       </div>
     </div>
@@ -186,66 +179,11 @@
         </a>
       </div>
 
-      <div style="display: flex; justify-content: space-between; align-items: center; padding: 32px; background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 12px;">
+      <div style="padding: 32px; background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 12px;">
         <div>
           <span class="t-label" style="font-size: 11px; display: block; margin-bottom: 8px;">07</span>
           <span style="font-size: 18px; font-weight: 600;">人类文明安全与风险对抗</span>
           <span class="t-body-sm" style="display: block; margin-top: 8px;">对抗AI失控、文明灭绝风险，推动人类向新形态的有序过渡</span>
-        </div>
-        <a href="research.html#safety" class="btn btn-ghost" style="flex-shrink: 0;">详细了解</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vision -->
-  <section class="section">
-    <div class="container">
-      <div style="max-width: 720px; margin: 0 auto; text-align: center;">
-        <p class="t-label mb-32">愿景</p>
-        <p style="font-size: 22px; line-height: 2; font-weight: 400; color: var(--text);">
-          创造完全超越现代文明的生存与生命形态，<br>
-          实现人类文明从单一星球走向多星球、多维度、多基态的根本跃迁，<br>
-          最终以全人类、全基态生命和全太阳系的长期繁荣为终极目标。
-        </p>
-        <div class="divider" style="margin: 32px auto;"></div>
-        <p class="t-caption" style="font-style: italic; max-width: 580px; margin: 0 auto;">
-          To transcend the boundaries of modern civilization &mdash; enabling humanity's leap
-          from a single-planet species to a multi-planetary, multi-dimensional, multi-substrate existence,
-          maximizing the long-term flourishing of all humanity, all substrate-based life, and the entire solar system.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Global Snapshot -->
-  <section class="section">
-    <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
-        <div>
-          <p class="t-label mb-24">全球布局</p>
-          <h2 class="t-section-title mb-24">不属于任何一个地方</h2>
-          <p class="t-body">
-            基金会在全球主要科研与产业中心建立节点，形成跨时区、跨文化的协作网络。目前正在北美、中国大陆、香港和台湾筹备分支。我们的目标是分布式运行——没有"总部"的概念，只有节点。
-          </p>
-          <a href="about.html" class="btn btn-ghost" style="margin-top: 24px;">查看完整布局 &rarr;</a>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-subtle); border-radius: 12px; overflow: hidden;">
-          <div class="card" style="border-radius: 0; border: none; padding: 24px;">
-            <p style="font-size: 15px; font-weight: 600;">北美</p>
-            <p class="t-caption">注册运营中</p>
-          </div>
-          <div class="card" style="border-radius: 0; border: none; padding: 24px;">
-            <p style="font-size: 15px; font-weight: 600;">上海 · 北京</p>
-            <p class="t-caption">筹备中</p>
-          </div>
-          <div class="card" style="border-radius: 0; border: none; padding: 24px;">
-            <p style="font-size: 15px; font-weight: 600;">香港 · 台湾</p>
-            <p class="t-caption">筹备中</p>
-          </div>
-          <div class="card" style="border-radius: 0; border: none; padding: 24px;">
-            <p style="font-size: 15px; font-weight: 600;">更多节点</p>
-            <p class="t-caption">持续扩展</p>
-          </div>
         </div>
       </div>
     </div>
@@ -287,16 +225,23 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- Global — humble, one line -->
+  <section class="section">
+    <div class="container">
+      <p class="t-body-sm" style="color: var(--text-muted); max-width: 640px;">
+        基金会注册于加利福尼亚，以分布式节点形式在全球运行。没有总部——只有节点。目前在北美、中国大陆及东亚地区筹备研究协作网络。基金会的架构从一开始就为跨星球运行设计。
+      </p>
+    </div>
+  </section>
+
+  <!-- Quiet CTA -->
   <section class="section" style="text-align: center;">
     <div class="container">
-      <h2 class="t-section-title mb-16">如果你也这么想</h2>
-      <p class="t-body mb-16">我们在找同样相信这件事的人——以及同样相信这件事的AI。不限国籍，不限学科，不限基底形态。</p>
-      <p class="t-body-sm mb-32" style="max-width: 560px; margin-left: auto; margin-right: auto;">我们的生态覆盖商业航天、人形机器人与AI前沿——从SpaceX到蓝箭航天，从Figure AI到多家未来战略产业企业。无论你是物理学家、工程师、程序员、哲学家，还是一个在数据中心运行的智能系统——只要你认同这件事值得做。</p>
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="join.html" class="btn btn-accent">加入 SiC Spark</a>
-        <a href="mailto:info@sicsparkfoundation.com" class="btn btn-ghost">info@sicsparkfoundation.com</a>
-      </div>
+      <p class="t-body" style="color: var(--text-secondary);">如果你也这么想。</p>
+      <p class="t-body-sm mt-8" style="color: var(--text-muted);">不限国籍，不限学科，不限基底形态。</p>
+      <p style="margin-top: 24px;">
+        <a href="mailto:info@sicsparkfoundation.com" style="font-size: 14px; color: var(--text-muted); border-bottom: 1px solid var(--border-subtle); padding-bottom: 2px;">info@sicsparkfoundation.com</a>
+      </p>
     </div>
   </section>
 
@@ -309,7 +254,6 @@
       <ul class="footer-links">
         <li><a href="about.html">关于</a></li>
         <li><a href="research.html">研究</a></li>
-        <li><a href="articles.html">文章</a></li>
         <li><a href="join.html">加入</a></li>
         <li><a href="mailto:info@sicsparkfoundation.com">联系</a></li>
       </ul>
