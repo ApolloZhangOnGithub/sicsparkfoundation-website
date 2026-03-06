@@ -289,7 +289,6 @@ img {
 
 .btn-primary:hover {
   background: #e4e4e7;
-  transform: translateY(-1px);
 }
 
 .btn-ghost {
@@ -310,7 +309,6 @@ img {
 
 .btn-accent:hover {
   background: var(--accent-hover);
-  transform: translateY(-1px);
 }
 
 /* ---- Cards ---- */
@@ -319,12 +317,6 @@ img {
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: 36px 32px;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.card:hover {
-  border-color: var(--border);
-  background: var(--bg-subtle);
 }
 
 /* ---- Divider ---- */
