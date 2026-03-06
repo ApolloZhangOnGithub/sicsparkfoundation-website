@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章 — SiC Spark Foundation</title>
+  <meta name="description" content="SiC Spark Foundation 技术文章：星际基础设施、AI驱动科研、硅碳文明形态的深度讨论。">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .article-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .article-card:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+    .article-card-body {
+      padding: 36px 32px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      padding: 4px 12px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .article-date {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .article-title {
+      font-size: clamp(20px, 3vw, 24px);
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .article-excerpt {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .article-read {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+    .article-featured {
+      grid-template-columns: 1fr;
+      border-color: rgba(201, 168, 76, 0.2);
+    }
+    .article-featured .article-card-body {
+      padding: 48px 40px;
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+      .article-featured .article-card-body {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><span>SiC</span></div>
+        SiC SPARK
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="about.html">关于</a></li>
+        <li><a href="research.html">研究方向</a></li>
+        <li><a href="articles.html" class="active">文章</a></li>
+        <li><a href="join.html">加入我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <p class="t-label">Articles</p>
+      <h1 class="t-page-title">技术文章</h1>
+      <p class="t-body">深入讨论星际文明建设中的具体技术方案与实现路径。<br>不是畅想，是工程问题的拆解。</p>
+    </div>
+  </header>
+
+  <!-- Featured Article -->
+  <section class="section">
+    <div class="container">
+      <p class="t-label mb-32">最新发布</p>
+
+      <div class="article-card article-featured mb-48">
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="article-tag">基础设施</span>
+            <span class="article-tag">能源</span>
+            <span class="article-date">2026.03</span>
+          </div>
+          <h2 class="article-title" style="font-size: clamp(24px, 4vw, 32px);">月球南极永久阴影区的能源架构：从第一块太阳能板到千兆瓦级电网</h2>
+          <p class="article-excerpt" style="max-width: 720px;">
+            月球南极的沙克尔顿环形山边缘是人类建立永久月球基地的首选位置——几乎永久的阳光照射、附近永久阴影区的水冰储备、相对平坦的地形。但"几乎永久"和"永久"之间的差距，足以杀死一个基地。本文从工程角度详细分析月球能源系统的设计，包括光伏阵列布局优化、储能方案对比（再生燃料电池 vs 锂硫电池 vs 飞轮储能）、微电网拓扑结构，以及从10kW先导站到1GW城市级电网的扩展路径。所有计算基于LRO和LCROSS的实测数据。
+          </p>
+          <span class="article-read">阅读全文 &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Article Grid -->
+      <div class="article-grid">
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">AI</span>
+              <span class="article-tag">方法论</span>
+              <span class="article-date">2026.03</span>
+            </div>
+            <h3 class="article-title">用大语言模型做文献综述：从100万篇论文中提取跨学科联系的方法</h3>
+            <p class="article-excerpt">
+              传统文献综述受限于单个研究者的阅读量和学科视野。我们用GPT-4o和Claude构建了一套自动化流水线：输入一个研究问题，系统自动从arXiv、PubMed、IEEE等数据库检索相关论文，提取核心方法和结论，然后寻找跨学科的潜在联系。在"月球表土烧结"这个测试案例中，系统发现了陶瓷工程和3D打印领域的3篇关键论文——这些论文从未在航天文献中被引用过。
+            </p>
+            <span class="article-read">阅读全文 &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">通信</span>
+              <span class="article-tag">架构</span>
+              <span class="article-date">2026.02</span>
+            </div>
+            <h3 class="article-title">地火通信延迟下的分布式状态同步：一个改进的CRDT方案</h3>
+            <p class="article-excerpt">
+              地球和火星之间的单向通信延迟在4到24分钟之间变化。在这种条件下，任何依赖实时确认的协议都会失效。我们提出了一种基于CRDT（无冲突复制数据类型）的改进方案，专门针对超长延迟和间歇性断连的场景进行优化。核心思路：让每个节点在本地自由修改数据，通过数学性质保证最终一致性，无需中心协调。
+            </p>
+            <span class="article-read">阅读全文 &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">材料</span>
+              <span class="article-tag">建造</span>
+              <span class="article-date">2026.02</span>
+            </div>
+            <h3 class="article-title">月球表土原位烧结建造：微波烧结 vs 太阳能聚光烧结的工程对比</h3>
+            <p class="article-excerpt">
+              从地球运送每公斤物资到月球表面的成本约为100万美元。这意味着月球基地的建筑材料必须就地取材。月球表土（regolith）富含硅氧化物和铁钛氧化物，理论上可以烧结成建筑用砖块和结构件。本文对比两种主要烧结路线的能耗、产出质量、设备复杂度和规模化潜力，基于Apollo样本数据和最新的模拟实验结果。
+            </p>
+            <span class="article-read">阅读全文 &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">生命</span>
+              <span class="article-tag">辐射</span>
+              <span class="article-date">2026.01</span>
+            </div>
+            <h3 class="article-title">深空辐射环境下的DNA损伤与修复：从被动防护到主动修复的路径</h3>
+            <p class="article-excerpt">
+              银河宇宙射线（GCR）中的重离子能穿透任何合理厚度的被动屏蔽层，直接打断DNA双链。对于超过6个月的深空任务，累计辐射剂量将显著增加癌症风险。本文综述当前辐射防护方案的局限性，并探讨三条前沿路径：基因编辑增强DNA修复机制、纳米机器人实时修复、以及借鉴水熊虫（Tardigrade）Dsup蛋白的仿生方案。
+            </p>
+            <span class="article-read">阅读全文 &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">治理</span>
+              <span class="article-tag">架构</span>
+              <span class="article-date">2026.01</span>
+            </div>
+            <h3 class="article-title">多行星文明的治理模型：延迟容忍民主与局部自治的数学框架</h3>
+            <p class="article-excerpt">
+              当火星殖民地和地球之间的通信延迟长达20分钟，传统的民主决策机制——投票、议会辩论、行政命令——都无法直接套用。本文提出一个混合治理框架：在局部事务上完全自治，在全局事务上通过异步共识机制协调。我们借鉴分布式系统中的Raft和Paxos协议，构建了一个适用于政治决策的延迟容忍共识算法。
+            </p>
+            <span class="article-read">阅读全文 &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">存档</span>
+              <span class="article-tag">安全</span>
+              <span class="article-date">2026.01</span>
+            </div>
+            <h3 class="article-title">不可摧毁的知识存档：一个跨星球分布式存储系统的技术架构</h3>
+            <p class="article-excerpt">
+              亚历山大图书馆的教训很清楚：把所有知识放在一个地方，就是把所有鸡蛋放在一个篮子里。我们设计了一套三层存档架构：热层（全球CDN，毫秒级访问）、温层（分布式IPFS节点 + 区块链完整性校验）、冷层（月球地下熔岩管中的物理介质存储）。本文详细讨论每一层的技术选型、冗余策略和自我修复协议。
+            </p>
+            <span class="article-read">阅读全文 &rarr;</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon Topics -->
+  <section class="section">
+    <div class="container">
+      <p class="t-label mb-24">即将发布</p>
+      <h2 class="t-section-title mb-48">正在研究的课题</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 1px; background: var(--border-subtle); border-radius: 12px; overflow: hidden;">
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">SpaceX Starship 的运载成本模型与月球基地建设的经济学分析</p>
+            <p class="t-caption">当每公斤发射成本从$100,000降到$100，哪些原本不可行的方案变得可行了？</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">研究中</span>
+        </div>
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Figure 01 类人形机器人在月球建造任务中的应用可行性</p>
+            <p class="t-caption">通用人形机器人 vs 专用建造机器人：哪条路线更适合月球？</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">研究中</span>
+        </div>
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">意识上传的信息论基础：主观体验可以被编码吗？</p>
+            <p class="t-caption">如果意识是信息的特定组织形式，那么理论上它可以被迁移到任何足够复杂的基底上。</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">研究中</span>
+        </div>
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">AI Agent 自主运行非营利研究组织的实验报告</p>
+            <p class="t-caption">让Claude和GPT-4o分别管理一个模拟研究项目30天，观察它们的决策模式和产出质量。</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">研究中</span>
+        </div>
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">从全技术树视角重构能源系统：一个统一的物理-工程-经济模型</p>
+            <p class="t-caption">把核聚变、太阳能、化学能和反物质放在同一个框架下比较，寻找星际文明的最优能源路径。</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">研究中</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Write for Us -->
+  <section class="section" style="text-align: center;">
+    <div class="container">
+      <h2 class="t-section-title mb-16">有东西想写？</h2>
+      <p class="t-body mb-16">我们欢迎来自任何学科的技术文章。只有一个要求：说实话，讲细节。</p>
+      <p class="t-body-sm mb-32" style="max-width: 520px; margin-left: auto; margin-right: auto;">
+        不需要完美的论文格式。一篇深入讨论某个具体问题的技术笔记，比一篇面面俱到的综述更有价值。你可以用中文或英文写，我们会帮你整理格式。
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:info@sicsparkfoundation.com" class="btn btn-accent">投稿联系</a>
+        <a href="join.html" class="btn btn-ghost">加入研究团队</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span style="font-size: 13px; color: var(--text-muted);">&copy; 2026 SiC Spark Foundation</span>
+        <span style="font-size: 12px; color: var(--text-muted);">California Nonprofit Public Benefit Corporation &middot; 501(c)(3) pending</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="about.html">关于</a></li>
+        <li><a href="research.html">研究</a></li>
+        <li><a href="articles.html">文章</a></li>
+        <li><a href="join.html">加入</a></li>
+        <li><a href="mailto:info@sicsparkfoundation.com">联系</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+  </script>
+
+</body>
+</html>

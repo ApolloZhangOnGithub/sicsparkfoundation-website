@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>研究方向 — SiC Spark Foundation</title>
+  <meta name="description" content="SiC Spark Foundation 七大核心研究方向：星际基础设施、AI自动化探索、技术树重构、多边开源、模块化架构、前沿生命形态、文明安全。">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .research-item {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .research-item:last-child {
+      border-bottom: none;
+    }
+    .research-num {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .research-title {
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .research-title-en {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .research-body {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .research-desc {
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--text-secondary);
+    }
+    .research-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .research-tag {
+      padding: 6px 14px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 100px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .research-question {
+      padding: 20px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+    }
+    .research-question p:first-child {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    @media (max-width: 768px) {
+      .research-body {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><span>SiC</span></div>
+        SiC SPARK
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="about.html">关于</a></li>
+        <li><a href="research.html" class="active">研究方向</a></li>
+        <li><a href="articles.html">文章</a></li>
+        <li><a href="join.html">加入我们</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <p class="t-label">Research</p>
+      <h1 class="t-page-title">核心研究方向</h1>
+      <p class="t-body">七个领域，一个目标：让人类文明做好走出地球的准备。<br>从物理层面到生命形态，从技术架构到文明安全，覆盖星际文明建设的完整链条。</p>
+    </div>
+  </header>
+
+  <!-- Research Areas -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+
+      <!-- 01 -->
+      <div class="research-item" id="infra">
+        <div class="research-num">01</div>
+        <h2 class="research-title">星际基础设施研究</h2>
+        <p class="research-title-en">Interstellar Infrastructure Research</p>
+        <div class="research-body">
+          <div>
+            <p class="research-desc">
+              以月球为第一个落脚点，系统性地研究面向火星和更远目的地的基础设施。不是把地球上的东西搬到月球上——而是从头思考：在另一个天体上，能源怎么来？通信怎么建？建筑用什么材料？人怎么活下去？
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              每一个问题，都需要从物理层面重新推演。地球上的混凝土在月球上没法用。地球上的太阳能板在火星上效率会大幅下降。地球上的通信协议在光速延迟20分钟的情况下完全失效。我们的目标是建立一套完整的、可复制的、能在不同天体上适配部署的基础设施方案库。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              这不是科幻概念设计。我们关注的是可以落地的工程方案：用什么材料、用什么能源、结构如何抗辐射、系统怎么在极端温差下运行。所有方案都将开源发布，供全人类使用。
+            </p>
+          </div>
+          <div class="research-sidebar">
+            <div class="research-tags">
+              <span class="research-tag">月球基地</span>
+              <span class="research-tag">火星前哨</span>
+              <span class="research-tag">能源系统</span>
+              <span class="research-tag">通信架构</span>
+              <span class="research-tag">原位资源利用</span>
+              <span class="research-tag">生命支持</span>
+              <span class="research-tag">辐射防护</span>
+              <span class="research-tag">热管理</span>
+            </div>
+            <div class="research-question">
+              <p>核心问题</p>
+              <p class="t-body-sm">如何在一个没有大气层、没有磁场、没有液态水的天体上，从零开始建立能支撑持续人类存在的基础设施？</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="research-item" id="ai">
+        <div class="research-num">02</div>
+        <h2 class="research-title">AI驱动的自动化科学探索</h2>
+        <p class="research-title-en">AI-Driven Automated Scientific Exploration</p>
+        <div class="research-body">
+          <div>
+            <p class="research-desc">
+              用人工智能驱动科学研究本身，而不仅仅是用AI当工具。我们在探索一种可能性：一个研究机构能否由硅基智能主导运行？能否逐步减少对特定个人的依赖，最终实现去员工化、去创始人化的自主运营？
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              这不是为了替代人，而是为了让研究的规模和持续性不再受限于人的寿命、精力和数量。当探索的目标是整个太阳系时，纯靠人力是不够的。一个人一天能读100篇论文，AI系统可以在同样时间内处理100万篇，并发现人类难以察觉的跨学科联系。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              我们也在研究AI参与科学研究的方法论问题：如何让AI提出有价值的科学假说？如何验证AI生成的研究结论？如何在人类和AI之间建立有效的协作模式？这些方法论本身，也将开源。
+            </p>
+          </div>
+          <div class="research-sidebar">
+            <div class="research-tags">
+              <span class="research-tag">自主科研</span>
+              <span class="research-tag">AI运营</span>
+              <span class="research-tag">去中心化决策</span>
+              <span class="research-tag">硅基参与</span>
+              <span class="research-tag">人机协作</span>
+              <span class="research-tag">科研方法论</span>
+            </div>
+            <div class="research-question">
+              <p>核心问题</p>
+              <p class="t-body-sm">一个研究组织是否可以在创始人和核心成员全部退出后，依靠硅基智能继续运行并产出有价值的成果？</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="research-item" id="tech-tree">
+        <div class="research-num">03</div>
+        <h2 class="research-title">全技术树统一化重构</h2>
+        <p class="research-title-en">Unified Technology Tree Restructuring</p>
+        <div class="research-body">
+          <div>
+            <p class="research-desc">
+              人类现有的技术体系是历史演化的产物，充满了偶然性和路径依赖。学科之间的壁垒是人为的——物理和化学在分子层面是统一的，生物和信息在编码层面是统一的，工程和数学在方法层面是统一的。但我们的知识体系把它们割裂了。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              我们要做的是：把人类文明的整棵技术树拉出来，重新审视，重新整理，找到底层的统一逻辑。这就像重构一个巨大的遗留代码库——你不会在旧架构上打补丁，而是理解业务逻辑后重新设计。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              研究范围不设限——制造业、互联网、物联网、能源系统，甚至政治结构和文化系统，都在重构的范围内。目标是实现前所未有的技术一致性和内在统一度。这套统一的技术框架，将成为星际文明建设的底层操作系统。
+            </p>
+          </div>
+          <div class="research-sidebar">
+            <div class="research-tags">
+              <span class="research-tag">跨学科整合</span>
+              <span class="research-tag">技术体系重构</span>
+              <span class="research-tag">统一框架</span>
+              <span class="research-tag">制造业</span>
+              <span class="research-tag">互联网</span>
+              <span class="research-tag">物联网</span>
+              <span class="research-tag">能源系统</span>
+            </div>
+            <div class="research-question">
+              <p>核心问题</p>
+              <p class="t-body-sm">能否找到一套统一的框架来描述和组织人类文明的全部技术——从芯片制造到社会治理？</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="research-item" id="opensource">
+        <div class="research-num">04</div>
+        <h2 class="research-title">全过程多边开源与不可摧毁存档</h2>
+        <p class="research-title-en">Full-Process Multilateral Open Source &amp; Indestructible Archive</p>
+        <div class="research-body">
+          <div>
+            <p class="research-desc">
+              不只是把成果开源——而是把研究的整个过程都开源。从问题的提出、文献的梳理、方法的选择、数据的收集、实验的记录，到最终的结论和反思，全部公开透明。这意味着任何人都可以复现、验证、改进我们的研究。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              同时，我们在研究一套真正"打不死"的存档系统：分布式存储、自我修复、抗攻击。亚历山大图书馆被烧毁了，巴格达智慧宫被摧毁了，人类文明史上已经丢失了无数知识。我们的存档系统要能抵御战争、自然灾害、政权更迭、甚至行星级别的灾难。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              技术方案包括：多地域分布式节点、基于区块链的完整性验证、物理层面的冗余备份（包括月球表面的存档节点），以及能在部分节点被摧毁后自动修复的协议。
+            </p>
+          </div>
+          <div class="research-sidebar">
+            <div class="research-tags">
+              <span class="research-tag">全过程透明</span>
+              <span class="research-tag">分布式存档</span>
+              <span class="research-tag">自我修复</span>
+              <span class="research-tag">抗攻击</span>
+              <span class="research-tag">永久保存</span>
+              <span class="research-tag">区块链验证</span>
+              <span class="research-tag">月球存档</span>
+            </div>
+            <div class="research-question">
+              <p>核心问题</p>
+              <p class="t-body-sm">如何建造一个任何力量——包括行星级别的灾难——都无法彻底摧毁的知识存档系统？</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="research-item" id="modular">
+        <div class="research-num">05</div>
+        <h2 class="research-title">分布化·模块化·中心化并行架构</h2>
+        <p class="research-title-en">Distributed &middot; Modular &middot; Centralized Parallel Architecture</p>
+        <div class="research-body">
+          <div>
+            <p class="research-desc">
+              当文明扩展到多个星球，地球和火星之间的通信延迟可能长达20分钟。在这种环境下，完全的中心化管理行不通——你不能等40分钟才收到一个决策的回复。完全的去中心化又效率太低——某些全局性的协调必须有人做。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              我们在研究一种混合架构：在局部高度自治，在全局保持协调。每个模块能独立运行（断网了照样工作），也能组合成更大的系统（联网后自动同步和优化）。这种架构不仅适用于技术系统，也适用于组织治理。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              具体场景：一个火星上的研究站与地球失联了一个月，它应该能够自主运行所有关键系统；恢复通信后，它能够自动与地球端同步状态、解决冲突、合并更新。这既是技术架构问题，也是治理模型问题。
+            </p>
+          </div>
+          <div class="research-sidebar">
+            <div class="research-tags">
+              <span class="research-tag">混合架构</span>
+              <span class="research-tag">局部自治</span>
+              <span class="research-tag">全局协调</span>
+              <span class="research-tag">模块化部署</span>
+              <span class="research-tag">星际通信延迟</span>
+              <span class="research-tag">冲突解决</span>
+              <span class="research-tag">状态同步</span>
+            </div>
+            <div class="research-question">
+              <p>核心问题</p>
+              <p class="t-body-sm">如何设计一套架构，让分布在不同星球上的节点既能独立运行，又能在恢复通信后无缝协同？</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="research-item" id="life">
+        <div class="research-num">06</div>
+        <h2 class="research-title">前沿生命形态探索</h2>
+        <p class="research-title-en">Frontier Life Form Exploration</p>
+        <div class="research-body">
+          <div>
+            <p class="research-desc">
+              人的身体是为地球环境优化的。37度体温、1个大气压、特定频段的光、特定范围的重力。一旦离开地球，这些限制就暴露出来了——宇宙辐射会损伤DNA、微重力会导致骨质流失、远距离太空旅行超出了人类寿命的极限。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              我们在探索突破这些限制的可能性。人机融合——用机械和电子系统增强或替代生物器官。数字生命——将意识和记忆转移到非生物基底上。并行意识——同时存在于多个载体中的主体性。全息生命——不依赖物质载体的信息化存在。可复制生命——可以备份和恢复的生命形态。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              这些听起来像科幻，但每一项都有扎实的科学基础和当前可推进的研究路径。最终目标是创造一个万亿节点的智能生命网络，其中每个节点既独立又互联，既保持个体性又能共享经验和知识。这种生命形态天然适合星际文明的尺度。
+            </p>
+          </div>
+          <div class="research-sidebar">
+            <div class="research-tags">
+              <span class="research-tag">人机融合</span>
+              <span class="research-tag">数字生命</span>
+              <span class="research-tag">并行意识</span>
+              <span class="research-tag">全息生命</span>
+              <span class="research-tag">可复制生命</span>
+              <span class="research-tag">智能网络</span>
+              <span class="research-tag">脑机接口</span>
+            </div>
+            <div class="research-question">
+              <p>核心问题</p>
+              <p class="t-body-sm">生命的本质是什么？是碳基的生物化学过程，还是信息的某种特定组织形式？如果是后者，生命可以存在于任何足够复杂的基底上。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 07 -->
+      <div class="research-item" id="safety">
+        <div class="research-num">07</div>
+        <h2 class="research-title">人类文明安全与风险对抗</h2>
+        <p class="research-title-en">Civilizational Security &amp; Risk Mitigation</p>
+        <div class="research-body">
+          <div>
+            <p class="research-desc">
+              AI在变强，风险也在变大。我们不回避这个问题。基金会的一个核心任务就是研究如何建立能抵御最坏情况的基础设施——包括AI失控、大规模生物威胁、核冲突、小行星撞击、超级火山喷发，以及其他可能导致文明倒退甚至灭绝的风险。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              不是空喊"AI安全"的口号，而是实际建设具备自我修复和进化能力的防御体系。具体包括：多行星文明备份（最根本的风险对冲）、可自我修复的基础设施网络（不依赖人工维护）、AI行为边界与对齐研究（防止智能系统偏离人类利益）、以及文明形态过渡期的稳定性研究。
+            </p>
+            <p class="research-desc" style="margin-top: 16px;">
+              我们的立场很明确：AI是工具，也是伙伴，但必须在可控的框架内发展。人类向新形态文明的过渡应该是有序的、渐进的、可逆的——而不是一场不可控的革命。确保这种有序过渡，是基金会最重要的使命之一。
+            </p>
+          </div>
+          <div class="research-sidebar">
+            <div class="research-tags">
+              <span class="research-tag">AI安全</span>
+              <span class="research-tag">灭绝风险</span>
+              <span class="research-tag">韧性基础设施</span>
+              <span class="research-tag">自我修复</span>
+              <span class="research-tag">有序过渡</span>
+              <span class="research-tag">AI对齐</span>
+              <span class="research-tag">多行星备份</span>
+            </div>
+            <div class="research-question">
+              <p>核心问题</p>
+              <p class="t-body-sm">如何确保人类从碳基文明向硅碳混合文明的过渡是可控的、有序的，而不会在过程中丧失对自身命运的掌控？</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Research Philosophy -->
+  <section class="section" style="border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <p class="t-label mb-24">研究理念</p>
+      <h2 class="t-section-title mb-48">我们怎么做研究</h2>
+      <div class="grid-3">
+        <div class="card">
+          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">从第一性原理出发</p>
+          <p class="t-body-sm">不接受"因为地球上这样做"作为答案。每一个技术方案都从物理层面重新推演，确保它在目标环境中成立。</p>
+        </div>
+        <div class="card">
+          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">开源不是终点，是起点</p>
+          <p class="t-body-sm">我们开源不是为了做完后发一个链接。研究的整个过程——包括失败的尝试和放弃的方向——都实时公开。这样其他人可以从我们的错误中学习。</p>
+        </div>
+        <div class="card">
+          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">AI做研究，人做判断</p>
+          <p class="t-body-sm">AI负责处理海量信息、发现跨学科联系、生成候选方案。人类负责提出问题、设定方向、做价值判断。目前阶段，人类是方向盘，AI是引擎。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="text-align: center; border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <h2 class="t-section-title mb-16">对某个方向有想法？</h2>
+      <p class="t-body mb-16">我们欢迎来自任何学科背景的研究者参与。</p>
+      <p class="t-body-sm mb-32" style="max-width: 480px; margin-left: auto; margin-right: auto;">你不需要是航天专家。物理学家、程序员、生物学家、设计师、哲学家——星际文明的建设需要所有学科的智慧。</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="join.html" class="btn btn-accent">加入 SiC Spark</a>
+        <a href="mailto:info@sicsparkfoundation.com" class="btn btn-ghost">info@sicsparkfoundation.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span style="font-size: 13px; color: var(--text-muted);">&copy; 2026 SiC Spark Foundation</span>
+        <span style="font-size: 12px; color: var(--text-muted);">California Nonprofit Public Benefit Corporation &middot; 501(c)(3) pending</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="about.html">关于</a></li>
+        <li><a href="research.html">研究</a></li>
+        <li><a href="articles.html">文章</a></li>
+        <li><a href="join.html">加入</a></li>
+        <li><a href="mailto:info@sicsparkfoundation.com">联系</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+  </script>
+
+</body>
+</html>
