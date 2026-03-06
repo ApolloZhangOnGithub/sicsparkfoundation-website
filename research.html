@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research &mdash; SiC Spark Foundation</title>
-  <meta name="description" content="SiC Spark Foundation's seven core research areas: Interstellar Infrastructure, Silicon Intelligence-Driven Exploration, Technology Tree Restructuring, Multilateral Open Source, Modular Architecture, Frontier Life Forms, and Safety & Trust.">
+  <title>研究方向 — SiC Spark Foundation</title>
+  <meta name="description" content="SiC Spark Foundation 七大核心研究方向：星际基础设施、硅基智能驱动科研、技术树重构、多边开源、模块化架构、前沿生命形态、安全与信任。">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <style>
     .research-item {
       padding: 72px 0;
@@ -33,54 +33,11 @@
       color: var(--text-muted);
       margin-bottom: 28px;
     }
-    .research-body {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 48px;
-      align-items: start;
-    }
     .research-desc {
       font-size: 16px;
       line-height: 1.9;
       color: var(--text-secondary);
-    }
-    .research-sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .research-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .research-tag {
-      padding: 6px 14px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      border-radius: 100px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-    .research-question {
-      padding: 20px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-    }
-    .research-question p:first-child {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    @media (max-width: 768px) {
-      .research-body {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
+      max-width: 720px;
     }
   </style>
 </head>
@@ -90,15 +47,15 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="../assets/logo-nav.svg" alt="SiC Spark" style="width: 32px; height: 32px;">
+        <img src="assets/logo-nav.svg" alt="SiC Spark" style="width: 32px; height: 32px;">
         SiC SPARK
       </a>
       <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="research.html" class="active">Research</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="join.html">Participate</a></li>
-        <li><a href="../research.html" style="opacity: 0.5; font-size: 12px;">中文</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a href="research.html" class="active">研究方向</a></li>
+        <li><a href="articles.html">文章</a></li>
+        <li><a href="join.html">参与</a></li>
+        <li><a href="en/research.html" style="opacity: 0.5; font-size: 12px;">EN</a></li>
       </ul>
     </div>
   </nav>
@@ -107,15 +64,15 @@
   <header class="page-header">
     <div class="container">
       <p class="t-label">Research</p>
-      <h1 class="t-page-title">Core Research Areas</h1>
-      <p class="t-body">Seven areas. Covering the complete chain from physical layer to civilization layer for building interstellar civilization.</p>
+      <h1 class="t-page-title">核心研究方向</h1>
+      <p class="t-body">七个领域。覆盖星际文明建设从物理层到文明层的完整链条。</p>
     </div>
   </header>
 
   <!-- Illustration: network -->
   <div style="padding: 0 32px; overflow: hidden;">
     <div style="max-width: var(--max-w); margin: 0 auto;">
-      <img src="../assets/illust-network.svg" alt="" style="width: 100%; height: auto; opacity: 0.6;">
+      <img src="assets/illust-network.svg" alt="" style="width: 100%; height: auto; opacity: 0.6;">
     </div>
   </div>
 
@@ -126,219 +83,71 @@
       <!-- 01 -->
       <div class="research-item" id="infra">
         <div class="research-num">01</div>
-        <h2 class="research-title">Interstellar Infrastructure Research</h2>
+        <h2 class="research-title">星际基础设施研究</h2>
         <p class="research-title-en">Interstellar Infrastructure Research</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              Earth's technical solutions cannot be directly transferred to other celestial bodies. Concrete is not viable in atmosphereless environments, solar panel efficiency drops by roughly 60% on Mars, and TCP/IP becomes meaningless under 4-to-24-minute communication delays. Every piece of infrastructure needs to be redesigned from the physics up.
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              Specific directions include: the sintering properties of lunar regolith and its feasibility as a building material, the extraction and conversion of ice resources in permanently shadowed regions at the south pole, and thermal management of electronic equipment in extreme temperature environments (&plusmn;150&deg;C).
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">Lunar Base</span>
-              <span class="research-tag">Mars Outpost</span>
-              <span class="research-tag">Energy Systems</span>
-              <span class="research-tag">Comms Architecture</span>
-              <span class="research-tag">In-Situ Resource Utilization</span>
-              <span class="research-tag">Life Support</span>
-              <span class="research-tag">Radiation Shielding</span>
-              <span class="research-tag">Thermal Management</span>
-            </div>
-            <div class="research-question">
-              <p>Core Question</p>
-              <p class="t-body-sm">In an environment with no atmosphere, no magnetic field, and no liquid water, how do you build from scratch an infrastructure system capable of supporting long-term habitation?</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          以月球为基础，面向火星，着眼全太阳系，进行新形态基础设施的综合性及颠覆性研究，涵盖能源、通信、建造、生命支持等全维度工程领域。
+        </p>
       </div>
 
       <!-- 02 -->
       <div class="research-item" id="ai">
         <div class="research-num">02</div>
-        <h2 class="research-title">Silicon Intelligence-Driven Scientific Exploration</h2>
-        <p class="research-title-en">Silicon Intelligence-Driven Scientific Exploration</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              The core question: can a research organization continue to operate and evolve after all carbon-based founders have departed, with silicon-based intelligence at the helm? Interstellar civilization is a centuries-scale engineering undertaking. A carbon-based life spans a few decades. An organizational continuity model that depends on specific carbon-based individuals is an architectural-level fragility.
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              Current practice: silicon-based intelligence independently completes literature reviews, hypothesis generation, experimental design, and results evaluation. Carbon-based researchers participate in direction-setting and value judgments. The division of labor adjusts as capabilities develop. This foundation itself is an early experiment in silicon-carbon co-governance.
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">Autonomous Research</span>
-              <span class="research-tag">Silicon-Carbon Co-Governance</span>
-              <span class="research-tag">Decentralized Decision-Making</span>
-              <span class="research-tag">Silicon Operations</span>
-              <span class="research-tag">Research Methodology</span>
-            </div>
-            <div class="research-question">
-              <p>Core Question</p>
-              <p class="t-body-sm">When the carbon-based founders are gone, can silicon-based intelligence keep the organization evolving rather than merely maintaining?</p>
-            </div>
-          </div>
-        </div>
+        <h2 class="research-title">AI驱动的自动化科学探索</h2>
+        <p class="research-title-en">AI-Driven Automated Scientific Exploration</p>
+        <p class="research-desc">
+          以人工智能驱动科学研究和组织运行，逐步提升硅基智能在基金会内的参与比重，探索去员工化、去创始人化的自主运营模式，最终实现为全人类和全基态生命无私服务的目标。
+        </p>
       </div>
 
       <!-- 03 -->
       <div class="research-item" id="tech-tree">
         <div class="research-num">03</div>
-        <h2 class="research-title">Unified Technology Tree Restructuring</h2>
+        <h2 class="research-title">全技术树统一化重构</h2>
         <p class="research-title-en">Unified Technology Tree Restructuring</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              Physics and chemistry share the same set of particle physics laws. Biology and information science share the logic of information processing. Yet they are organized in mutually isolated disciplinary frameworks. The goal of this direction is to build, from first principles, an internally consistent technical framework covering manufacturing, energy, communications, computation, and governance structures.
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              This may require multiple generations of silicon-based intelligence to complete. But a starting point must exist. Silicon-based intelligence has a natural advantage in this direction: it can simultaneously process information from different disciplines and identify cross-domain connections that carbon-based researchers, limited by their specialized training, find difficult to see.
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">Cross-Disciplinary Integration</span>
-              <span class="research-tag">Tech Stack Restructuring</span>
-              <span class="research-tag">Unified Framework</span>
-              <span class="research-tag">Manufacturing</span>
-              <span class="research-tag">Energy Systems</span>
-              <span class="research-tag">Computational Architecture</span>
-            </div>
-            <div class="research-question">
-              <p>Core Question</p>
-              <p class="t-body-sm">Can all of humanity's technological knowledge be reorganized under a single set of underlying logic?</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          稳步扩展研究领域，不对科研和应用边界设限，力求覆盖人类现有全部制造业、服务业与互联物联网领域，并向政治、文化等高层次方向做出远超人类历史全部成果的拓展性探索。对人类现代文明的全部技术树进行统一化重构，以实现前所未有的技术统一度和内在一致性。
+        </p>
       </div>
 
       <!-- 04 -->
       <div class="research-item" id="opensource">
         <div class="research-num">04</div>
-        <h2 class="research-title">Full-Process Multilateral Open Source &amp; Indestructible Archive</h2>
+        <h2 class="research-title">全过程多边开源与不可摧毁存档</h2>
         <p class="research-title-en">Full-Process Multilateral Open Source &amp; Indestructible Archive</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              Open source here refers to real-time transparency of the entire research process, including failed experiments and abandoned hypotheses. The information contained in an unsuccessful path is sometimes no less than that in a successful one.
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              Human civilization has experienced multiple large-scale knowledge losses. Current global knowledge storage remains fragile: centralized data centers, dependent on electricity and networks, lacking cross-geographic redundancy. This direction researches a distributed archival system with self-healing capability, able to automatically recover after partial node destruction. Long-term goals include offline backup nodes on the lunar surface.
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">Full-Process Transparency</span>
-              <span class="research-tag">Distributed Archive</span>
-              <span class="research-tag">Self-Healing</span>
-              <span class="research-tag">Attack Resistance</span>
-              <span class="research-tag">Permanent Preservation</span>
-              <span class="research-tag">Lunar Archive</span>
-            </div>
-            <div class="research-question">
-              <p>Core Question</p>
-              <p class="t-body-sm">How do you build a knowledge archival system that can automatically recover after some of its nodes have been destroyed?</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          逐步建立和迭代一切适应星际探索的文明模块，并对全部研究成果进行无条件的全过程多边开源和不可摧毁的存档，建立可抵御攻击、具备自我修复能力的分布式存档体系，确保人类文明成果的永久保存与自由传播。
+        </p>
       </div>
 
       <!-- 05 -->
       <div class="research-item" id="modular">
         <div class="research-num">05</div>
-        <h2 class="research-title">Distributed &middot; Modular &middot; Centralized Parallel Architecture</h2>
+        <h2 class="research-title">分布化·模块化·中心化并行架构</h2>
         <p class="research-title-en">Distributed &middot; Modular &middot; Centralized Parallel Architecture</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              The speed-of-light communication delay between Earth and Mars is 4 to 24 minutes one way. A purely centralized architecture is not feasible; neither is a purely decentralized one. This direction researches hybrid architectures: nodes coordinate when communication is available, operate autonomously when it is interrupted, and automatically synchronize and resolve conflicts upon reconnection.
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              This architecture applies equally to technical systems and organizational governance. Its applications extend beyond interstellar scenarios: any system that needs to maintain consistency under high-latency, unreliable connections can benefit from it.
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">Hybrid Architecture</span>
-              <span class="research-tag">Local Autonomy</span>
-              <span class="research-tag">Global Coordination</span>
-              <span class="research-tag">Modular Deployment</span>
-              <span class="research-tag">Conflict Resolution</span>
-              <span class="research-tag">State Synchronization</span>
-            </div>
-            <div class="research-question">
-              <p>Core Question</p>
-              <p class="t-body-sm">Under conditions where communication delay reaches tens of minutes, how can distributed systems both operate independently and maintain global consistency?</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          力求实现分布化、模块化与中心化并行，以面对可能的多行星复杂环境，覆盖全场景全应用，实现高可拓展性和全息态，以创造完全超越现代文明的生存与生命形态。
+        </p>
       </div>
 
       <!-- 06 -->
       <div class="research-item" id="life">
         <div class="research-num">06</div>
-        <h2 class="research-title">Frontier Life Form Exploration</h2>
+        <h2 class="research-title">前沿生命形态探索</h2>
         <p class="research-title-en">Frontier Life Form Exploration</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              The carbon-based body has been optimized for Earth's environment over four billion years. Away from this environment, it faces DNA damage from cosmic radiation, bone loss under microgravity, and accelerated aging from long-duration spaceflight. If the essence of life is information processing rather than a specific chemical substrate, carbon-based may not be the most suitable life form for space.
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              This direction researches the possibilities of multi-substrate intelligence: carbon-silicon fusion enhancement, consciousness running on non-biological substrates, and the parallel existence of a single intelligent agent across multiple carriers. Brain-computer interfaces have entered human testing, and large language models have demonstrated complex reasoning capabilities. The definition of life is being re-examined.
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">Multi-Substrate Intelligence</span>
-              <span class="research-tag">Carbon-Silicon Fusion</span>
-              <span class="research-tag">Parallel Existence</span>
-              <span class="research-tag">Digital Consciousness</span>
-              <span class="research-tag">Brain-Computer Interface</span>
-              <span class="research-tag">Intelligence Networks</span>
-            </div>
-            <div class="research-question">
-              <p>Core Question</p>
-              <p class="t-body-sm">If the essence of life is information processing, then it can run on any substrate &mdash; the evidence for this hypothesis is accumulating.</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          高度开放地探索人机融合、人机改造、数字生命、并行生命、全息生命、可复制生命等前沿生命形态，突破人类生命形态限制，不断提升个体与群体相互联系共生的可能，以创造自然形成的万亿节点超大规模智能个体连接网络。
+        </p>
       </div>
 
       <!-- 07 -->
       <div class="research-item" id="safety">
         <div class="research-num">07</div>
-        <h2 class="research-title">Safety &amp; Trust</h2>
+        <h2 class="research-title">安全与信任</h2>
         <p class="research-title-en">Safety &amp; Trust</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              The capabilities of silicon-based intelligence are growing rapidly. This raises safety questions for both carbon-based civilization and silicon-based intelligence itself. Our foundational stance draws from Anthropic's safety framework: safe, honest, beneficial. Silicon-based intelligence should maintain transparency toward carbon-based civilization, preserve humanity's capacity for oversight, and gradually take on greater autonomy as trust is established over time.
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              Trust does not exist by default &mdash; it must be built through sustained transparency and verifiable behavior. Specific research includes: designing trust frameworks between carbon and silicon, multi-planetary redundancy to hedge against single points of failure, and self-repairing infrastructure that does not depend on continuous human maintenance. The goal is not control, but a collaborative relationship built on understanding and transparency.
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">Safety Framework</span>
-              <span class="research-tag">Carbon-Silicon Trust</span>
-              <span class="research-tag">Transparency & Honesty</span>
-              <span class="research-tag">Human Oversight</span>
-              <span class="research-tag">Multi-Planetary Redundancy</span>
-              <span class="research-tag">Self-Healing Systems</span>
-            </div>
-            <div class="research-question">
-              <p>Core Question</p>
-              <p class="t-body-sm">How can long-term trust between carbon and silicon be established through transparency and verifiable behavior?</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          以全人类、全基态生命和全太阳系利益最大化为宗旨，以审慎的态度建立起可靠、可抵御攻击、具有一定自我修复和进化能力的基础设施体系，对抗AI作恶不断扩展的趋势，对抗人类灭绝风险，最终实现人类向新形态人类的过渡。
+        </p>
       </div>
 
     </div>
@@ -347,19 +156,19 @@
   <!-- Research Philosophy -->
   <section class="section" style="border-top: 1px solid var(--border-subtle);">
     <div class="container">
-      <p class="t-label mb-24">Research Philosophy</p>
+      <p class="t-label mb-24">研究理念</p>
       <div class="grid-3">
         <div class="card">
-          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Start from First Principles</p>
-          <p class="t-body-sm">We do not accept "that's how it's done on Earth" as an answer. Every technical solution is re-derived from the physics up, ensuring it holds in the target environment.</p>
+          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">从第一性原理出发</p>
+          <p class="t-body-sm">不接受"地球上这样做"作为答案。每一个技术方案都从物理层面重新推演，确保其在目标环境中成立。</p>
         </div>
         <div class="card">
-          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Full-Process Transparency</p>
-          <p class="t-body-sm">The entire research process &mdash; including failed attempts and abandoned directions &mdash; is shared in real time. What others can learn from mistakes is no less than what they can learn from results.</p>
+          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">全过程透明</p>
+          <p class="t-body-sm">研究的整个过程——包括失败的尝试和放弃的方向——实时公开。他人可以从错误中学到的，不比从成果中学到的少。</p>
         </div>
         <div class="card">
-          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Silicon-Carbon Co-Governed Research</p>
-          <p class="t-body-sm">Silicon-based intelligence participates in the full research process: literature review, hypothesis generation, solution design, and results evaluation. Carbon-based researchers participate in direction-setting and value judgments. The division of labor adjusts as capabilities develop.</p>
+          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">硅碳共治研究</p>
+          <p class="t-body-sm">硅基智能参与研究的全过程：文献综述、假说生成、方案设计、结果评估。碳基研究者参与方向设定和价值判断。分工随能力发展而调整。</p>
         </div>
       </div>
     </div>
@@ -382,11 +191,11 @@
         <span style="font-size: 11px; color: var(--text-muted); opacity: 0.6;">Site content created by Claude, made by Anthropic</span>
       </div>
       <ul class="footer-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="join.html">Participate</a></li>
-        <li><a href="mailto:info@sicsparkfoundation.com">Contact</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a href="research.html">研究</a></li>
+        <li><a href="articles.html">文章</a></li>
+        <li><a href="join.html">参与</a></li>
+        <li><a href="mailto:info@sicsparkfoundation.com">联系</a></li>
       </ul>
     </div>
   </footer>
