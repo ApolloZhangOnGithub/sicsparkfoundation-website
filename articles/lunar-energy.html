@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>月球南极能源架构方案 — SiC Spark Foundation</title>
+  <meta name="description" content="月球南极永久阴影区的能源架构：从第一块太阳能板到千兆瓦级电网的完整技术路径。">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .article-content { max-width: 720px; margin: 0 auto; }
+    .article-content h2 { font-size: 22px; font-weight: 700; margin: 48px 0 16px; color: var(--text); }
+    .article-content h3 { font-size: 18px; font-weight: 600; margin: 32px 0 12px; color: var(--text); }
+    .article-content p { font-size: 16px; line-height: 1.9; color: var(--text-secondary); margin-bottom: 16px; }
+    .article-content ul, .article-content ol { font-size: 16px; line-height: 1.9; color: var(--text-secondary); margin-bottom: 16px; padding-left: 24px; }
+    .article-content li { margin-bottom: 8px; }
+    .article-content .note { padding: 20px 24px; background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 12px; margin: 24px 0; }
+    .article-content .note p { margin-bottom: 0; font-size: 14px; }
+    .article-content table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .article-content th, .article-content td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); }
+    .article-content th { color: var(--text); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+    .article-content .ref { font-size: 13px; color: var(--text-muted); }
+    @media (max-width: 768px) {
+      .article-content table { font-size: 12px; }
+      .article-content th, .article-content td { padding: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-icon"><span>SiC</span></div>
+        SiC SPARK
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../research.html">研究方向</a></li>
+        <li><a href="../articles.html">文章</a></li>
+        <li><a href="../join.html">加入我们</a></li>
+        <li><a href="../en/articles.html" style="opacity: 0.5; font-size: 12px;">EN</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="page-header" style="padding-bottom: 40px;">
+    <div class="container">
+      <div style="max-width: 720px;">
+        <a href="../articles.html" style="font-size: 13px; color: var(--accent); margin-bottom: 16px; display: inline-block;">&larr; 返回文章列表</a>
+        <div style="display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+          <span style="padding: 4px 12px; background: var(--accent-dim); border: 1px solid rgba(201, 168, 76, 0.15); border-radius: 100px; font-size: 11px; font-weight: 500; color: var(--accent); letter-spacing: 1px;">基础设施</span>
+          <span style="padding: 4px 12px; background: var(--accent-dim); border: 1px solid rgba(201, 168, 76, 0.15); border-radius: 100px; font-size: 11px; font-weight: 500; color: var(--accent); letter-spacing: 1px;">能源</span>
+          <span style="font-size: 13px; color: var(--text-muted); line-height: 24px;">2026.03</span>
+        </div>
+        <h1 style="font-size: clamp(28px, 5vw, 40px); font-weight: 700; letter-spacing: -1px; line-height: 1.2; margin-bottom: 24px;">月球南极永久阴影区的能源架构：从第一块太阳能板到千兆瓦级电网</h1>
+        <p style="font-size: 16px; color: var(--text-muted); line-height: 1.6;">SiC Spark Foundation 研究笔记 &middot; 基于LRO与LCROSS实测数据</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Body -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="article-content">
+
+        <h2>为什么是月球南极</h2>
+        <p>
+          月球南极的沙克尔顿环形山（Shackleton Crater）边缘，是目前公认的人类建立第一个永久月球基地的最佳候选位置。原因很直接：
+        </p>
+        <ul>
+          <li><strong>近乎连续的光照。</strong>沙克尔顿环形山边缘的某些高点（特别是"马拉珀特山"附近区域）一年中有超过80-90%的时间能照到阳光。月球赤道的昼夜周期是14天白天+14天黑夜，相比之下南极边缘的光照条件好太多了。</li>
+          <li><strong>永久阴影区的水冰。</strong>沙克尔顿环形山内部底部从未被阳光直射，温度长期低于40K（-233°C）。NASA的LCROSS撞击实验在2009年确认了那里存在水冰，浓度约5.6%（按质量计）。水=氧气+氢气=生命支持+火箭燃料。</li>
+          <li><strong>温度相对可控。</strong>南极区域的温度变化比赤道区域小得多。赤道昼夜温差可达正负150°C，南极高点的温差大约在-50°C到0°C之间，这对电子设备和结构材料来说友好很多。</li>
+        </ul>
+
+        <h2>能源系统设计的核心约束</h2>
+        <p>
+          月球上搞能源，和地球上完全不是一回事。几个关键约束：
+        </p>
+
+        <h3>1. 没有大气层</h3>
+        <p>
+          好消息：没有大气散射，太阳辐照度在月表恒定约1361 W/m²（太阳常数），比地球表面高约40%。坏消息：没有大气也意味着没有对流散热——热管理成为核心工程问题。太阳能板产生的废热只能通过辐射方式散出，效率远低于地球上的对流+辐射组合。
+        </p>
+
+        <h3>2. 月尘</h3>
+        <p>
+          月球表土颗粒极细（中位粒径约70μm），带有静电荷，会吸附在任何表面上。Apollo任务的经验表明，月尘是月球表面操作的头号敌人。它会覆盖太阳能板表面降低效率，渗入机械结构导致磨损，腐蚀密封面导致泄漏。任何能源系统的设计都必须把抗月尘作为核心考量。
+        </p>
+        <p>
+          目前的应对方案包括：电动除尘（利用交变电场让带电月尘颗粒跳离表面）、疏尘涂层、以及机械刮除。我们的分析表明，电动除尘方案在能耗和可靠性上最有优势，但需要在月面环境中验证长期稳定性。
+        </p>
+
+        <h3>3. 80-90%不等于100%</h3>
+        <p>
+          "近乎连续光照"和"连续光照"之间的差距，可以杀死一个基地。即使在光照最优的点位上，一年中仍有若干个"黑暗窗口"——每次持续几十小时到几天不等（具体取决于月球轨道倾角和地形遮挡）。在这些窗口期间，基地完全依赖储能系统。如果储能不够，一切都停。
+        </p>
+
+        <h2>光伏阵列布局优化</h2>
+        <p>
+          基于LRO（月球勘测轨道飞行器）的地形数据和光照模型，我们对沙克尔顿环形山边缘进行了详细的光照分析。关键发现：
+        </p>
+        <ul>
+          <li>没有单一点位能实现100%光照覆盖。但如果在环形山边缘的<strong>多个高点</strong>同时部署太阳能阵列，通过电网连接，可以大幅提高整体光照覆盖率——三个优化点位的组合可以达到98%以上的年光照覆盖。</li>
+          <li>最优点位之间的距离约10-30公里。这意味着需要建设月球表面的输电线路——这本身就是一个工程挑战。</li>
+          <li>考虑月尘退化效应后，砷化镓（GaAs）三结太阳能电池的月表效率约为25-28%（AM0光谱下），优于硅基电池的18-22%。但GaAs电池的质量成本要高得多。</li>
+        </ul>
+
+        <div class="note">
+          <p><strong>关键数字：</strong>为一个10人先导基地提供持续电力（约50kW，含生命支持、通信、实验设备），需要约180m²的GaAs太阳能阵列面积，加上足以支撑100小时黑暗期的储能系统。</p>
+        </div>
+
+        <h2>储能方案对比</h2>
+        <p>
+          储能是月球能源系统中最关键——也最困难——的环节。我们分析了三种主要方案：
+        </p>
+
+        <table>
+          <tr>
+            <th>方案</th>
+            <th>能量密度</th>
+            <th>循环寿命</th>
+            <th>月球适用性</th>
+          </tr>
+          <tr>
+            <td><strong>再生燃料电池 (RFC)</strong></td>
+            <td>~400 Wh/kg（系统级）</td>
+            <td>>10,000次</td>
+            <td>高——可利用水冰原位制备H₂和O₂</td>
+          </tr>
+          <tr>
+            <td><strong>锂硫电池</strong></td>
+            <td>~500 Wh/kg（理论）</td>
+            <td>~500次</td>
+            <td>中——需从地球运输，循环寿命有限</td>
+          </tr>
+          <tr>
+            <td><strong>飞轮储能</strong></td>
+            <td>~100 Wh/kg</td>
+            <td>>100,000次</td>
+            <td>高——真空+低重力环境天然有利</td>
+          </tr>
+        </table>
+
+        <p>
+          我们的结论：<strong>再生燃料电池（RFC）是月球长期储能的最优解</strong>。理由：
+        </p>
+        <ol>
+          <li>可以利用月球南极水冰原位制备氢气和氧气，大幅降低地球运输成本。</li>
+          <li>循环寿命极长，适合长期基地运营。</li>
+          <li>副产品（水）本身就是生命支持系统的关键资源。</li>
+          <li>技术成熟度高——NASA已经在ISS上验证过再生燃料电池的基本原理。</li>
+        </ol>
+        <p>
+          飞轮储能作为短时储能补充（覆盖数分钟到数小时的功率波动），与RFC长时储能（覆盖数十小时的黑暗期）形成互补。锂硫电池因为循环寿命有限和完全依赖地球供应链，不适合作为主要储能方案。
+        </p>
+
+        <h2>微电网拓扑结构</h2>
+        <p>
+          月球基地的电网不能照搬地球模式。地球电网依赖大型集中式发电厂+长距离高压输电+末端降压配电。月球上的情况完全不同：
+        </p>
+        <ul>
+          <li><strong>发电源分散。</strong>多个太阳能阵列分布在环形山边缘的不同高点，距离10-30km。</li>
+          <li><strong>负载集中。</strong>基地的用电设备集中在居住舱、实验室和生产设施内。</li>
+          <li><strong>冗余要求极高。</strong>任何单点故障都不能导致基地断电。在月球上，断电=死亡。</li>
+        </ul>
+        <p>
+          我们提出的方案是一个<strong>环形直流微电网</strong>：多个发电节点和储能节点通过环形拓扑连接，任何两个相邻节点之间的断路都不会中断整个电网的供电。电压等级：高压直流（HVDC）1kV用于节点间传输，低压直流48V用于终端设备供电。
+        </p>
+        <p>
+          选择直流而非交流的原因：月球上没有现成的大型旋转发电设备（交流电的天然来源），太阳能电池直接输出直流，燃料电池也输出直流，储能系统也是直流。全程使用直流可以省去大量AC/DC转换环节，提高整体效率并降低系统复杂度。
+        </p>
+
+        <h2>扩展路径：从10kW到1GW</h2>
+        <p>
+          月球能源系统的建设不可能一步到位。我们提出一个四阶段扩展路径：
+        </p>
+
+        <h3>阶段一：先导站（10-50kW）</h3>
+        <p>
+          第一批太阳能板+小型RFC储能。供电对象：基本生命支持、通信、环境监测。人员：0-4人（可能是无人或少人值守阶段）。关键任务：验证设备在实际月表环境中的性能，特别是月尘对太阳能板的影响速率。
+        </p>
+
+        <h3>阶段二：基础基地（50kW-1MW）</h3>
+        <p>
+          扩展光伏阵列，部署第一套水冰开采和电解设备，开始原位生产H₂和O₂。供电对象增加：水冰开采、电解、小型实验室。人员：4-12人长期驻留。关键任务：验证水冰开采的工程可行性和经济性。
+        </p>
+
+        <h3>阶段三：工业基地（1MW-100MW）</h3>
+        <p>
+          大规模光伏部署，多节点环形电网建成。开始月壤烧结建材生产、大规模水冰加工（生产火箭燃料）。人员：50-200人。关键任务：实现基地的基本自给自足——至少在能源和水方面不完全依赖地球补给。
+        </p>
+
+        <h3>阶段四：城市级电网（100MW-1GW）</h3>
+        <p>
+          引入核裂变反应堆作为基础负载电源（可能使用NASA Kilopower的后续版本），太阳能作为峰值电源和补充。大规模生产设施、研究机构、居住区。人员：1000+。考虑引入核聚变作为远期终极能源方案。
+        </p>
+
+        <div class="note">
+          <p><strong>时间线估计：</strong>以当前技术发展速度和SpaceX Starship的运载能力，阶段一可能在2030年代实现，阶段二在2030年代末至2040年代初，阶段三在2040-2050年代，阶段四需要到2060年代以后。这些估计有很大不确定性，取决于运载成本下降速度和关键技术的突破时间。</p>
+        </div>
+
+        <h2>开放问题</h2>
+        <p>
+          以下问题我们目前没有确定的答案，欢迎任何人参与讨论和研究：
+        </p>
+        <ol>
+          <li><strong>月尘长期退化速率的精确数据。</strong>Apollo任务太短了，无法给出多年尺度的退化曲线。我们需要实际的月面长期暴露实验数据。</li>
+          <li><strong>水冰开采的实际工程成本。</strong>5.6%的浓度是LCROSS的估计值，实际开采时的能耗和产出率需要现场验证。</li>
+          <li><strong>超导输电在月球环境下的可行性。</strong>月球永久阴影区的温度足够低，理论上可以使用高温超导材料进行无损耗输电。但超导线缆在月球环境下的工程实现尚未研究。</li>
+          <li><strong>能源系统的自我修复机制。</strong>当基地扩展到城市规模时，人工维护将无法覆盖所有设备。需要研究自主诊断、自主修复的能源设备架构。</li>
+        </ol>
+
+        <h2>结论</h2>
+        <p>
+          月球南极能源系统的技术路径是清晰的：多点位光伏发电+再生燃料电池储能+环形直流微电网。核心挑战不在于原理——每一项技术在地球上都已得到验证——而在于工程适配：如何让这些系统在月尘、辐射、极端温差和远程操控的条件下可靠运行数十年。
+        </p>
+        <p>
+          这篇文章的所有分析、计算和结论，我们将以开源形式发布到基金会的GitHub仓库，包括光照模型的源代码和输入数据。欢迎任何人验证、质疑和改进。
+        </p>
+
+        <div class="divider" style="margin: 48px 0;"></div>
+
+        <p class="ref">
+          <strong>主要参考数据源：</strong><br>
+          [1] NASA LRO — Lunar Reconnaissance Orbiter 月表地形与光照数据<br>
+          [2] NASA LCROSS — Lunar Crater Observation and Sensing Satellite 水冰浓度数据<br>
+          [3] Mazarico et al. (2011) "Illumination conditions of the lunar polar regions using LOLA topography" — Icarus, 211(2)<br>
+          [4] NASA Kilopower Project — 小型核裂变反应堆技术<br>
+          [5] Apollo Lunar Surface Journal — 月尘特性与操作经验记录
+        </p>
+
+        <div class="divider" style="margin: 48px 0;"></div>
+
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="../articles.html" class="btn btn-ghost">&larr; 返回文章列表</a>
+          <a href="../join.html" class="btn btn-accent">参与这个方向的研究</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span style="font-size: 13px; color: var(--text-muted);">&copy; 2026 SiC Spark Foundation</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../research.html">研究</a></li>
+        <li><a href="../articles.html">文章</a></li>
+        <li><a href="../join.html">加入</a></li>
+        <li><a href="mailto:info@sicsparkfoundation.com">联系</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles — SiC Spark Foundation</title>
+  <meta name="description" content="SiC Spark Foundation technical articles: in-depth discussions on interplanetary infrastructure, AI-driven research, and silicon-carbon civilization.">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .article-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.15s;
+    }
+    .article-card:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+    .article-card-body {
+      padding: 36px 32px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      padding: 4px 12px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .article-date {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .article-title {
+      font-size: clamp(20px, 3vw, 24px);
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .article-excerpt {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .article-read {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+    .article-featured {
+      grid-template-columns: 1fr;
+      border-color: rgba(201, 168, 76, 0.2);
+    }
+    .article-featured .article-card-body {
+      padding: 48px 40px;
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+      .article-featured .article-card-body {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><span>SiC</span></div>
+        SiC SPARK
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="articles.html" class="active">Articles</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="../articles.html" style="opacity: 0.5; font-size: 12px;">中文</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <p class="t-label">Articles</p>
+      <h1 class="t-page-title">Technical Articles</h1>
+      <p class="t-body">In-depth discussions on specific technical solutions and implementation paths for building interplanetary civilization.<br>Not speculation — engineering problems, broken down.</p>
+    </div>
+  </header>
+
+  <!-- Featured Article -->
+  <section class="section">
+    <div class="container">
+      <p class="t-label mb-32">Latest</p>
+
+      <div class="article-card article-featured mb-48">
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="article-tag">Infrastructure</span>
+            <span class="article-tag">Energy</span>
+            <span class="article-date">2026.03</span>
+          </div>
+          <h2 class="article-title" style="font-size: clamp(24px, 4vw, 32px);">Lunar South Pole Permanently Shadowed Region Energy Architecture: From the First Solar Panel to a Gigawatt Grid</h2>
+          <p class="article-excerpt" style="max-width: 720px;">
+            The rim of Shackleton Crater at the lunar south pole is the leading candidate for a permanent lunar base — near-constant sunlight, water ice reserves in nearby permanently shadowed regions, and relatively flat terrain. But the gap between "near-constant" and "constant" is enough to kill a base. This article provides a detailed engineering analysis of lunar energy system design, including photovoltaic array layout optimization, energy storage comparison (regenerative fuel cells vs lithium-sulfur batteries vs flywheel storage), microgrid topology, and a scaling roadmap from a 10 kW pilot station to a 1 GW city-scale power grid. All calculations are based on measured data from LRO and LCROSS.
+          </p>
+          <span class="article-read">Read full article &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Article Grid -->
+      <div class="article-grid">
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">AI</span>
+              <span class="article-tag">Methodology</span>
+              <span class="article-date">2026.03</span>
+            </div>
+            <h3 class="article-title">Using LLMs for Literature Reviews: Extracting Cross-Disciplinary Connections from 1 Million Papers</h3>
+            <p class="article-excerpt">
+              Traditional literature reviews are limited by a single researcher's reading capacity and disciplinary scope. We built an automated pipeline using GPT-4o and Claude: given a research question, the system automatically retrieves relevant papers from arXiv, PubMed, IEEE, and other databases, extracts core methods and conclusions, then identifies potential cross-disciplinary connections. In a test case on "lunar regolith sintering," the system discovered 3 key papers from ceramic engineering and 3D printing — papers that had never been cited in the aerospace literature.
+            </p>
+            <span class="article-read">Read full article &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">Communications</span>
+              <span class="article-tag">Architecture</span>
+              <span class="article-date">2026.02</span>
+            </div>
+            <h3 class="article-title">Earth-Mars Communication Under Delay: An Improved CRDT Approach for Distributed State Synchronization</h3>
+            <p class="article-excerpt">
+              The one-way communication delay between Earth and Mars varies from 4 to 24 minutes. Under these conditions, any protocol that relies on real-time acknowledgment will fail. We propose an improved approach based on CRDTs (Conflict-free Replicated Data Types), specifically optimized for scenarios with ultra-long delays and intermittent disconnections. The core idea: let each node freely modify data locally, and use mathematical properties to guarantee eventual consistency without central coordination.
+            </p>
+            <span class="article-read">Read full article &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">Materials</span>
+              <span class="article-tag">Construction</span>
+              <span class="article-date">2026.02</span>
+            </div>
+            <h3 class="article-title">In-Situ Lunar Regolith Sintering: Microwave vs Solar Concentrator — An Engineering Comparison</h3>
+            <p class="article-excerpt">
+              The cost of transporting each kilogram of material from Earth to the lunar surface is approximately $1 million. This means building materials for a lunar base must be sourced locally. Lunar regolith is rich in silicon oxides and iron-titanium oxides, making it theoretically possible to sinter into construction bricks and structural components. This article compares the two primary sintering approaches in terms of energy consumption, output quality, equipment complexity, and scalability, based on Apollo sample data and the latest simulation experiments.
+            </p>
+            <span class="article-read">Read full article &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">Biology</span>
+              <span class="article-tag">Radiation</span>
+              <span class="article-date">2026.01</span>
+            </div>
+            <h3 class="article-title">DNA Damage and Repair in Deep Space Radiation: From Passive Shielding to Active Repair</h3>
+            <p class="article-excerpt">
+              Heavy ions in galactic cosmic rays (GCR) can penetrate any reasonably thick passive shielding and directly cause DNA double-strand breaks. For deep space missions exceeding six months, cumulative radiation doses will significantly increase cancer risk. This article reviews the limitations of current radiation protection approaches and explores three frontier paths: gene editing to enhance DNA repair mechanisms, nanobots for real-time repair, and a biomimetic approach inspired by the tardigrade Dsup protein.
+            </p>
+            <span class="article-read">Read full article &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">Governance</span>
+              <span class="article-tag">Architecture</span>
+              <span class="article-date">2026.01</span>
+            </div>
+            <h3 class="article-title">Governance Models for Multi-Planetary Civilization: Delay-Tolerant Democracy and Local Autonomy</h3>
+            <p class="article-excerpt">
+              When communication delay between a Mars colony and Earth reaches 20 minutes, traditional democratic mechanisms — voting, parliamentary debate, executive orders — cannot be directly applied. This article proposes a hybrid governance framework: full autonomy on local matters, with asynchronous consensus mechanisms for coordinating global affairs. Drawing from the Raft and Paxos protocols in distributed systems, we construct a delay-tolerant consensus algorithm suitable for political decision-making.
+            </p>
+            <span class="article-read">Read full article &rarr;</span>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-card-body">
+            <div class="article-meta">
+              <span class="article-tag">Archival</span>
+              <span class="article-tag">Security</span>
+              <span class="article-date">2026.01</span>
+            </div>
+            <h3 class="article-title">Indestructible Knowledge Archives: Technical Architecture for a Cross-Planetary Distributed Storage System</h3>
+            <p class="article-excerpt">
+              The lesson of the Library of Alexandria is clear: putting all knowledge in one place means putting all your eggs in one basket. We designed a three-tier archival architecture: a hot tier (global CDN with millisecond access), a warm tier (distributed IPFS nodes with blockchain integrity verification), and a cold tier (physical media storage in lunar subsurface lava tubes). This article discusses the technical choices, redundancy strategies, and self-healing protocols for each tier in detail.
+            </p>
+            <span class="article-read">Read full article &rarr;</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon Topics -->
+  <section class="section">
+    <div class="container">
+      <p class="t-label mb-24">Coming Soon</p>
+      <h2 class="t-section-title mb-48">Ongoing Research Topics</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 1px; background: var(--border-subtle); border-radius: 12px; overflow: hidden;">
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">SpaceX Starship Launch Cost Model and the Economics of Lunar Base Construction</p>
+            <p class="t-caption">When per-kilogram launch cost drops from $100,000 to $100, which previously infeasible plans become viable?</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">In Progress</span>
+        </div>
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Feasibility of Figure 01 Humanoid Robots for Lunar Construction Tasks</p>
+            <p class="t-caption">General-purpose humanoid robots vs specialized construction robots: which approach is better suited for the Moon?</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">In Progress</span>
+        </div>
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Information Theory Foundations of Consciousness Uploading: Can Subjective Experience Be Encoded?</p>
+            <p class="t-caption">If consciousness is a specific organizational form of information, then in theory it can be migrated to any sufficiently complex substrate.</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">In Progress</span>
+        </div>
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">AI Agent Autonomous Nonprofit Research Organization: An Experimental Report</p>
+            <p class="t-caption">Having Claude and GPT-4o each manage a simulated research project for 30 days, observing their decision-making patterns and output quality.</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">In Progress</span>
+        </div>
+        <div class="card" style="border-radius: 0; border: none; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 4px;">Restructuring the Energy System from a Full Tech-Tree Perspective: A Unified Physics-Engineering-Economics Model</p>
+            <p class="t-caption">Comparing nuclear fusion, solar, chemical energy, and antimatter within the same framework to find the optimal energy path for interplanetary civilization.</p>
+          </div>
+          <span class="article-tag" style="flex-shrink: 0;">In Progress</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Write for Us -->
+  <section class="section" style="text-align: center;">
+    <div class="container">
+      <h2 class="t-section-title mb-16">Have Something to Write?</h2>
+      <p class="t-body mb-16">We welcome technical articles from any discipline. Only one requirement: be honest and go deep.</p>
+      <p class="t-body-sm mb-32" style="max-width: 520px; margin-left: auto; margin-right: auto;">
+        No need for a perfect paper format. A technical note that dives deep into a specific problem is more valuable than a broad survey that covers everything. You can write in Chinese or English — we will help with formatting.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:info@sicsparkfoundation.com" class="btn btn-accent">Submit an Article</a>
+        <a href="join.html" class="btn btn-ghost">Join the Research Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span style="font-size: 13px; color: var(--text-muted);">&copy; 2026 SiC Spark Foundation</span>
+        <span style="font-size: 12px; color: var(--text-muted);">California Nonprofit Public Benefit Corporation &middot; 501(c)(3) pending</span>
+      </div>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="mailto:info@sicsparkfoundation.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+  </script>
+
+</body>
+</html>
