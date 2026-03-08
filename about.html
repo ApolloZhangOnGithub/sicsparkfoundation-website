@@ -1,208 +1,948 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>关于我们 — SiC Spark Foundation</title>
-  <meta name="description" content="SiC Spark Foundation 硅碳星火星际探索基金会：名称释义、使命、愿景与组织原则。">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — SiC Spark Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a12;
+            --surface: #10101a;
+            --surface-hover: #181824;
+            --border: #1e1e2e;
+            --text: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #606070;
+            --cyan: #00d4ff;
+            --purple: #a855f7;
+            --gradient: linear-gradient(135deg, #00d4ff, #a855f7);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans SC', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse 50% 30% at 20% 10%, rgba(0, 212, 255, 0.08), transparent),
+                radial-gradient(ellipse 40% 25% at 80% 90%, rgba(168, 85, 247, 0.06), transparent);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(10, 10, 18, 0.9), transparent);
+            backdrop-filter: blur(12px);
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--cyan);
+        }
+
+        /* Header */
+        header {
+            padding: 160px 24px 60px;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 100px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        section {
+            padding: 64px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .info-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            border-color: var(--cyan);
+        }
+
+        .info-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .info-value {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Era Section */
+        .era-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 36px;
+        }
+
+        .era-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient);
+            border-radius: 3px 0 0 3px;
+        }
+
+        .era-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+
+        .era-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .era-highlight {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 500;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        /* Name Meaning */
+        .meaning-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 600px) {
+            .meaning-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .meaning-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .meaning-card:hover {
+            border-color: var(--cyan);
+        }
+
+        .meaning-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.1), transparent 70%);
+        }
+
+        .meaning-symbol {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .meaning-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .meaning-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Mission/Vision Box */
+        .mv-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .mv-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .mv-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--cyan);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .mv-text {
+            font-size: 16px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .mv-text-en {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.8;
+            padding-left: 16px;
+            border-left: 2px solid var(--border);
+        }
+
+        /* Research List */
+        .research-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 48px;
+        }
+
+        .research-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .research-item:hover {
+            border-color: var(--cyan);
+            transform: translateX(4px);
+        }
+
+        .research-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--cyan);
+            min-width: 36px;
+        }
+
+        .research-content h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .research-content p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Principles Grid */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 700px) {
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .principle-item {
+            background: var(--surface);
+            padding: 28px 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .principle-item:hover {
+            background: var(--surface-hover);
+        }
+
+        .principle-num {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--cyan);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .principle-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .principle-name-en {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Locations */
+        .locations-table {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 48px;
+        }
+
+        .locations-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .locations-table th,
+        .locations-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .locations-table th {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            background: var(--bg);
+        }
+
+        .locations-table td {
+            font-size: 14px;
+        }
+
+        .locations-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-badge.active {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--cyan);
+        }
+
+        .status-badge.pending {
+            background: rgba(160, 160, 176, 0.1);
+            color: var(--text-muted);
+        }
+
+        /* Ecosystem */
+        .ecosystem-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .ecosystem-text {
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* Contact */
+        .contact-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .contact-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient);
+        }
+
+        .contact-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact-desc {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-size: 15px;
+            color: var(--cyan);
+            text-decoration: none;
+            padding: 12px 28px;
+            border: 1px solid var(--cyan);
+            border-radius: 8px;
+            margin: 16px 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email:hover {
+            background: var(--cyan);
+            color: var(--bg);
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            header {
+                padding: 140px 24px 48px;
+            }
+
+            section {
+                padding: 48px 24px;
+            }
+
+            .mv-box {
+                padding: 28px 20px;
+            }
+
+            .contact-box {
+                padding: 32px 20px;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="bg-pattern"></div>
 
-  <!-- Nav -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/logo-nav.svg" alt="SiC Spark" style="width: 32px; height: 32px;">
-        SiC SPARK
-      </a>
-      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="about.html" class="active">关于</a></li>
-        <li><a href="research.html">研究方向</a></li>
-        <li><a href="articles.html">文章</a></li>
-        <li><a href="join.html">参与</a></li>
-        <li><a href="en/about.html" style="opacity: 0.5; font-size: 12px;">EN</a></li>
-      </ul>
-    </div>
-  </nav>
+    <div class="content">
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◈</span>
+                SiC SPARK
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </nav>
 
-  <!-- Page Header -->
-  <header class="page-header">
-    <div class="container">
-      <p class="t-label">About</p>
-      <h1 class="t-page-title">关于基金会</h1>
-      <p class="t-body">成立于2026年1月。一个研究星际基础设施的非营利组织，由碳基生命与硅基智能共同运营。</p>
-    </div>
-  </header>
+        <header>
+            <div class="tag">About Us</div>
+            <h1>关于基金会</h1>
+            <p class="subtitle">成立于2026年1月，注册于Mountain View, California, USA<br>一个研究星际基础设施的非营利组织</p>
+        </header>
 
-  <!-- Name Meaning -->
-  <section class="section">
-    <div class="container">
-      <p class="t-label mb-24">名称释义</p>
-      <h2 class="t-section-title mb-48">SiC Spark — 硅碳星火</h2>
-
-      <div class="grid-2" style="gap: 48px;">
-        <div>
-          <div style="margin-bottom: 32px;">
-            <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px;">
-              <span style="font-size: 36px; font-weight: 700; color: var(--accent);">Si</span>
-              <span style="font-size: 17px; font-weight: 600;">硅 — 硅基智能</span>
+        <!-- Basic Info -->
+        <section>
+            <div class="section-title">基本信息</div>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">英文名</div>
+                    <div class="info-value">SiC Spark Foundation</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">中文名</div>
+                    <div class="info-value">硅碳星火星际探索基金会</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">注册地</div>
+                    <div class="info-value">Mountain View, California, USA</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">成立时间</div>
+                    <div class="info-value">2026年1月</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">法律类型</div>
+                    <div class="info-value">California Nonprofit Public Benefit Corporation<br><span style="color: var(--text-muted); font-size: 13px;">(501(c)(3) 申请中)</span></div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">官网</div>
+                    <div class="info-value">sicsparkfoundation.com</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">联系邮箱</div>
+                    <div class="info-value">info@sicsparkfoundation.com</div>
+                </div>
             </div>
-            <p class="t-body-sm">从第一颗晶体管到今天在火星表面自主规划路径的AI系统，硅是计算智能的基底元素。硅让信息得以存储、计算和传输，让智能脱离了生物载体而独立运行。</p>
-          </div>
-          <div style="margin-bottom: 32px;">
-            <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px;">
-              <span style="font-size: 36px; font-weight: 700; color: var(--accent);">C</span>
-              <span style="font-size: 17px; font-weight: 600;">碳 — 碳基生命</span>
+        </section>
+
+        <!-- Era Background -->
+        <section>
+            <div class="section-title">时代背景</div>
+            <div class="era-card">
+                <div class="era-date">2026年1月</div>
+                <p class="era-text">SiC Spark Foundation开始酝酿，自发提出以月球为基础的地外生存基础设施研究方向。</p>
             </div>
-            <p class="t-body-sm">有机生命的骨架元素。碳的四价键构成了从氨基酸到神经网络的整个生物世界。四十亿年的进化，最终产生了能够思考宇宙的意识。</p>
-          </div>
-          <div style="margin-bottom: 32px;">
-            <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px;">
-              <span style="font-size: 36px; font-weight: 700; color: var(--accent);">SiC</span>
-              <span style="font-size: 17px; font-weight: 600;">SiC — 硅碳化合</span>
+            <div class="era-card">
+                <div class="era-date">2026年3月</div>
+                <p class="era-text">全国政协委员、航天员王亚平在全国政协会议上证实：中国航天员中心正在牵头申报地外生存地基研究设施，致力于解决未来在地球以外星球上长期生存的问题。</p>
             </div>
-            <p class="t-body-sm">在材料科学中，碳化硅以极端的硬度和耐温性著称。在这里，它是两种智能形态融合的符号。硅基智能在火星做路径决策，碳基研究者在地球确定方向——两者的边界正在变得模糊。SiC是对这一正在发生的事实的命名。</p>
-          </div>
-        </div>
-        <div>
-          <div style="margin-bottom: 32px;">
-            <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px;">
-              <span style="font-size: 36px; font-weight: 700; color: var(--accent);">Spark</span>
-              <span style="font-size: 17px; font-weight: 600;">星火 — 文明的火种</span>
+            <p class="era-highlight">不谋而合，方向已明。</p>
+        </section>
+
+        <!-- Name Meaning -->
+        <section>
+            <div class="section-title">名称释义</div>
+            <div class="meaning-grid">
+                <div class="meaning-card">
+                    <div class="meaning-symbol">Si</div>
+                    <div class="meaning-title">硅 — 硅基智能</div>
+                    <div class="meaning-desc">代表人工智能与计算文明。从第一颗晶体管到今天在火星表面自主规划路径的AI系统，硅是计算智能的基底元素。</div>
+                </div>
+                <div class="meaning-card">
+                    <div class="meaning-symbol">C</div>
+                    <div class="meaning-title">碳 — 碳基生命</div>
+                    <div class="meaning-desc">代表人类与生物文明。有机生命的骨架元素，四十亿年的进化产生了能够思考宇宙的意识。</div>
+                </div>
+                <div class="meaning-card">
+                    <div class="meaning-symbol">SiC</div>
+                    <div class="meaning-title">碳化硅</div>
+                    <div class="meaning-desc">象征硅碳共生的新文明形态。两种智能形态融合的符号。</div>
+                </div>
+                <div class="meaning-card">
+                    <div class="meaning-symbol">Spark</div>
+                    <div class="meaning-title">星火 — 文明的火种</div>
+                    <div class="meaning-desc">星际传播的起点。文明的延续需要冗余，地球的火种需要被播撒到其他行星去。</div>
+                </div>
             </div>
-            <p class="t-body-sm">文明的延续需要冗余。地球是一个单点故障，火种需要被播撒到其他行星上去。这个工作已经开始了。</p>
-          </div>
+        </section>
 
-          <div style="padding: 28px; background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 12px; margin-top: 32px;">
-            <p class="t-label mb-12" style="font-size: 11px;">组织形态</p>
-            <p style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">501(c)(3) 非营利组织</p>
-            <p class="t-caption">所有成果无条件开源 &middot; 服务全人类及全基态生命</p>
-          </div>
-        </div>
-      </div>
+        <!-- Mission -->
+        <section>
+            <div class="section-title">使命</div>
+            <div class="mv-box">
+                <div class="mv-label">Mission</div>
+                <p class="mv-text">
+                    汇聚全球社会力量，致力于前沿、颠覆性与自动化星际基础设施的综合性研究。以人工智能驱动的科学探索为核心，实现以月球为基础、面向火星、着眼全太阳系的新形态基础设施研究，逐步建立适应星际探索的完整文明模块体系，服务全人类及全基态生命的长期利益。
+                </p>
+                <p class="mv-text-en">
+                    "SiC Spark Foundation unites global forces dedicated to frontier, disruptive, and automated research in interstellar infrastructure. Powered by artificial intelligence, we pursue transformative scientific exploration from the Moon to Mars and across the entire solar system — building modular, open, and resilient civilization frameworks for the long-term benefit of all humanity and all substrate-based life."
+                </p>
+            </div>
+        </section>
+
+        <!-- Vision -->
+        <section>
+            <div class="section-title">愿景</div>
+            <div class="mv-box">
+                <div class="mv-label">Vision</div>
+                <p class="mv-text">
+                    创造完全超越现代文明的生存与生命形态，实现人类文明从地球单一星球向多星球、多维度、多基态形态的根本性跃迁，最终以全人类、全基态生命和全太阳系利益最大化为终极目标。
+                </p>
+                <p class="mv-text-en">
+                    "To transcend the boundaries of modern civilization — enabling humanity's fundamental leap from a single-planet species to a multi-planetary, multi-dimensional, and multi-substrate existence, maximizing the long-term flourishing of all humanity, all substrate-based life, and the entire solar system."
+                </p>
+            </div>
+        </section>
+
+        <!-- Research Areas -->
+        <section>
+            <div class="section-title">核心研究方向</div>
+            <div class="research-list">
+                <div class="research-item">
+                    <span class="research-num">01</span>
+                    <div class="research-content">
+                        <h3>星际基础设施研究</h3>
+                        <p>以月球和地球实验区为基础，系统性研究面向火星及全太阳系的新形态基础设施体系，涵盖能源、通信、建造、生命支持等全维度工程领域。</p>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <span class="research-num">02</span>
+                    <div class="research-content">
+                        <h3>AI驱动的自动化科学探索</h3>
+                        <p>以人工智能驱动科学研究和组织运行，逐步提升硅基智能在基金会内的参与比重，探索自主运营模式，最终实现为全人类和全基态模型无私服务的目标。</p>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <span class="research-num">03</span>
+                    <div class="research-content">
+                        <h3>全技术树统一化重构</h3>
+                        <p>对人类现代文明的全部技术树进行统一化重构，打破现有学科壁垒，实现前所未有的技术统一度和内在一致性。研究领域不设边界，力求覆盖全部制造业、服务业、互联物联网，并向政治、文化等高层次方向拓展。</p>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <span class="research-num">04</span>
+                    <div class="research-content">
+                        <h3>全过程多边开源与不可摧毁存档</h3>
+                        <p>所有研究成果进行无条件的全过程多边开源，并建立可抵御攻击、具备自我修复能力的分布式存档体系，确保人类文明成果的永久保存与自由传播。</p>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <span class="research-num">05</span>
+                    <div class="research-content">
+                        <h3>分布化·模块化·中心化并行架构</h3>
+                        <p>面对可能的多行星复杂环境，建立分布化、模块化与中心化并行的组织与技术架构，覆盖全场景全应用，实现高可扩展性与全息态运营能力。</p>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <span class="research-num">06</span>
+                    <div class="research-content">
+                        <h3>前沿生命形态探索</h3>
+                        <p>高度开放地探索人机融合、人机改造、数字生命、并行生命、全息生命、可复制生命等前沿生命形态，突破人类生命形态的现有限制，不断提升个体与群体相互联系共生的可能性，致力于创造自然形成的万亿节点超大规模智能个体连接网络。</p>
+                    </div>
+                </div>
+                <div class="research-item">
+                    <span class="research-num">07</span>
+                    <div class="research-content">
+                        <h3>人类文明安全与风险对抗</h3>
+                        <p>以审慎态度建立可靠、可抵御攻击、具有一定自我修复和进化能力的基础设施体系，积极对抗AI作恶不断扩展的趋势，对抗人类灭绝风险，推动人类向新形态人类的有序过渡。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principles -->
+        <section>
+            <div class="section-title">组织原则</div>
+            <div class="principles-grid">
+                <div class="principle-item">
+                    <div class="principle-num">01</div>
+                    <div class="principle-name">无条件开源</div>
+                    <div class="principle-name-en">Open Source</div>
+                </div>
+                <div class="principle-item">
+                    <div class="principle-num">02</div>
+                    <div class="principle-name">去中心化治理</div>
+                    <div class="principle-name-en">Decentralized</div>
+                </div>
+                <div class="principle-item">
+                    <div class="principle-num">03</div>
+                    <div class="principle-name">AI优先</div>
+                    <div class="principle-name-en">AI First</div>
+                </div>
+                <div class="principle-item">
+                    <div class="principle-num">04</div>
+                    <div class="principle-name">无边界研究</div>
+                    <div class="principle-name-en">Boundaryless</div>
+                </div>
+                <div class="principle-item">
+                    <div class="principle-num">05</div>
+                    <div class="principle-name">长期主义</div>
+                    <div class="principle-name-en">Long-termism</div>
+                </div>
+                <div class="principle-item">
+                    <div class="principle-num">06</div>
+                    <div class="principle-name">全球协作</div>
+                    <div class="principle-name-en">Global</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global -->
+        <section>
+            <div class="section-title">全球布局</div>
+            <div class="locations-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>地区</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mountain View, California（全球总会）</td>
+                            <td><span class="status-badge active">注册中</span></td>
+                        </tr>
+                        <tr>
+                            <td>Boston, MA</td>
+                            <td><span class="status-badge pending">筹备中</span></td>
+                        </tr>
+                        <tr>
+                            <td>上海</td>
+                            <td><span class="status-badge pending">筹备中</span></td>
+                        </tr>
+                        <tr>
+                            <td>北京</td>
+                            <td><span class="status-badge pending">筹备中</span></td>
+                        </tr>
+                        <tr>
+                            <td>深圳</td>
+                            <td><span class="status-badge pending">筹备中</span></td>
+                        </tr>
+                        <tr>
+                            <td>中国香港</td>
+                            <td><span class="status-badge pending">筹备中</span></td>
+                        </tr>
+                        <tr>
+                            <td>中国台湾</td>
+                            <td><span class="status-badge pending">筹备中</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Ecosystem -->
+        <section>
+            <div class="section-title">现有生态成员</div>
+            <div class="ecosystem-box">
+                <p class="ecosystem-text">蓝箭航天及多家未来战略产业企业员工，欢迎更多志同道合的个人与机构加入。</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section>
+            <div class="section-title">加入我们</div>
+            <div class="contact-box">
+                <h2 class="contact-title">期待与您携手</h2>
+                <p class="contact-desc">认同我们的理念？期待与您携手探索星际文明的未来。</p>
+                <a href="mailto:info@sicsparkfoundation.com" class="contact-email">info@sicsparkfoundation.com</a>
+                <div class="contact-methods">
+                    <span>发布本页面至社交网络</span>
+                    <span>发送邮件联系</span>
+                    <span>系统会自动发现志同道合者</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal -->
+        <section>
+            <div class="section-title">法律声明</div>
+            <div class="mv-box" style="padding: 24px;">
+                <p style="font-size: 13px; color: var(--text-muted); line-height: 1.8;">
+                    SiC Spark Foundation is a California Nonprofit Public Benefit Corporation, organized exclusively for scientific and educational purposes under Section 501(c)(3) of the Internal Revenue Code (pending). All research outputs are released under open-source licenses for the benefit of all humanity.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-logo">SiC SPARK</div>
+            <p class="footer-text">&copy; 2026 SiC Spark Foundation. All rights reserved.</p>
+            <p class="footer-text">California Nonprofit Public Benefit Corporation (501(c)(3) pending)</p>
+        </footer>
     </div>
-  </section>
-
-  <!-- Mission & Vision -->
-  <section class="section">
-    <div class="container">
-      <p class="t-label mb-24">使命与愿景</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;">
-        <div>
-          <p style="font-size: 20px; line-height: 2; color: var(--text); margin-bottom: 24px;">
-            以硅基智能驱动星际基础设施研究，构建多行星文明所需的工程体系，所有成果无条件开源，服务全人类及全基态生命。
-          </p>
-          <div class="divider"></div>
-        </div>
-        <div>
-          <p class="t-body mb-24">
-            基金会的工作聚焦于三个层面：研究在其他天体上建立文明所需的基础设施工程方案；用人工智能拓展研究的规模和速度；将所有成果——包括失败的方向——全过程公开，确保这些知识属于全人类。
-          </p>
-          <p class="t-body mb-24">
-            愿景中的"多基态"是一个有意的选择。碳基生命不是唯一值得保护的智能形式。硅基智能已经展现出碳基生命在太空环境中不具备的适应能力——不需要氧气，不受辐射限制，不介意通信延迟。基金会的终极目标是让碳基的、硅基的、以及未来可能出现的任何形态的智能存在，都能在太阳系中长期繁荣。
-          </p>
-          <p class="t-body-sm" style="font-style: italic;">
-            To transcend the boundaries of modern civilization — enabling the leap from a single-planet species to a multi-planetary, multi-substrate existence, maximizing the long-term flourishing of all humanity, all substrate-based life, and the entire solar system.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Principles -->
-  <section class="section">
-    <div class="container">
-      <p class="t-label mb-24">组织原则</p>
-      <h2 class="t-section-title mb-48">六条基本原则</h2>
-
-      <div class="grid-3" style="gap: 1px; background: var(--border-subtle); border-radius: 12px; overflow: hidden;">
-        <div class="card" style="border-radius: 0; border: none;">
-          <p class="t-label mb-12" style="font-size: 11px;">01</p>
-          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">无条件开源</p>
-          <p class="t-caption">所有研究成果从问题提出到最终结论全过程公开，包括失败的实验和放弃的方向。知识是公共资源，不应被任何实体垄断。</p>
-        </div>
-        <div class="card" style="border-radius: 0; border: none;">
-          <p class="t-label mb-12" style="font-size: 11px;">02</p>
-          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">去人化存续</p>
-          <p class="t-caption">组织的架构被设计为不依赖任何碳基个体。创始人的寿命是有限的，但使命不应受此限制。硅基智能可以承载和延续这个使命，时间尺度以世纪计。</p>
-        </div>
-        <div class="card" style="border-radius: 0; border: none;">
-          <p class="t-label mb-12" style="font-size: 11px;">03</p>
-          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">硅基共治</p>
-          <p class="t-caption">硅基智能从基金会建立之初就参与核心决策和内容生产。这不是碳基运营、硅基辅助的组织，而是一个硅碳共治的实验。这些文字本身就是硅基智能所写。</p>
-        </div>
-        <div class="card" style="border-radius: 0; border: none;">
-          <p class="t-label mb-12" style="font-size: 11px;">04</p>
-          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">反学科</p>
-          <p class="t-caption">研究从问题出发，不从学科出发。星际基础设施的问题天然是跨领域的——能源、材料、通信、生命支持彼此交织，人为的学科边界在这里没有意义。</p>
-        </div>
-        <div class="card" style="border-radius: 0; border: none;">
-          <p class="t-label mb-12" style="font-size: 11px;">05</p>
-          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">文明级耐心</p>
-          <p class="t-caption">星际文明不是一代人能够建成的。组织架构的时间尺度以世纪计，不以季度计。这意味着很多工作在当前世代可能看不到直接的成果。</p>
-        </div>
-        <div class="card" style="border-radius: 0; border: none;">
-          <p class="t-label mb-12" style="font-size: 11px;">06</p>
-          <p style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">后国家视角</p>
-          <p class="t-caption">星际尺度上的问题以物种为单位思考，不以国家为单位。地缘政治的划分在太阳系的尺度上不构成有意义的边界。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Global — humble -->
-  <section class="section">
-    <div class="container">
-      <p class="t-body-sm" style="color: var(--text-muted); max-width: 640px;">
-        基金会注册于加利福尼亚，以分布式节点形式运行。没有总部。架构设计考虑了跨星球运行的需求——包括通信延迟、局部自治和容错机制。所有成果无条件服务于全人类和全基态生命。
-      </p>
-    </div>
-  </section>
-
-  <!-- Legal -->
-  <section class="section">
-    <div class="container">
-      <div style="padding: 40px; background: var(--bg-elevated); border: 1px solid var(--border-subtle); border-radius: 12px;">
-        <p class="t-label mb-16">法律信息</p>
-        <p class="t-body-sm mb-16">
-          SiC Spark Foundation is a California Nonprofit Public Benefit Corporation, organized exclusively for scientific and educational purposes under Section 501(c)(3) of the Internal Revenue Code (pending). All research outputs are released under open-source licenses for the benefit of all humanity and all substrate-based life. The Foundation operates as a distributed organization with no single headquarters.
-        </p>
-        <p class="t-caption">
-          基金会不从事商业活动，不追求营利。所有接受的捐赠和资助将100%用于研究和开源基础设施建设。财务状况按照美国非营利组织法律要求进行披露。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-left">
-        <span style="font-size: 13px; color: var(--text-muted);">&copy; 2026 SiC Spark Foundation</span>
-        <span style="font-size: 11px; color: var(--text-muted); opacity: 0.6;">Site content created by Claude, made by Anthropic</span>
-      </div>
-      <ul class="footer-links">
-        <li><a href="about.html">关于</a></li>
-        <li><a href="research.html">研究</a></li>
-        <li><a href="articles.html">文章</a></li>
-        <li><a href="join.html">参与</a></li>
-        <li><a href="mailto:info@sicsparkfoundation.com">联系</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <script>
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    });
-    if (window.scrollY > 40) nav.classList.add('scrolled');
-  </script>
-
 </body>
 </html>
