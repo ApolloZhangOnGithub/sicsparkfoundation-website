@@ -19,17 +19,17 @@
             --bg-card: #10102a;
             --bg-card-hover: #141432;
             --border: rgba(255,255,255,0.06);
-            --border-accent: rgba(0,212,255,0.25);
+            --border-accent: rgba(165,180,252,0.25);
             --text: #eaeaf2;
             --text-secondary: #9494ac;
             --text-muted: #58586e;
-            --accent: #00d4ff;
-            --accent-soft: rgba(0,212,255,0.08);
-            --accent-glow: rgba(0,212,255,0.15);
-            --violet: #8b5cf6;
-            --violet-soft: rgba(139,92,246,0.08);
-            --gradient: linear-gradient(135deg, #00d4ff 0%, #8b5cf6 100%);
-            --gradient-subtle: linear-gradient(135deg, rgba(0,212,255,0.12), rgba(139,92,246,0.12));
+            --accent: #a5b4fc;
+            --accent-soft: rgba(165,180,252,0.08);
+            --accent-glow: rgba(165,180,252,0.15);
+            --violet: #818cf8;
+            --violet-soft: rgba(129,140,248,0.08);
+            --gradient: linear-gradient(135deg, #e0e7ff 0%, #a5b4fc 40%, #818cf8 100%);
+            --gradient-subtle: linear-gradient(135deg, rgba(165,180,252,0.12), rgba(129,140,248,0.12));
             --radius: 16px;
             --radius-sm: 10px;
             --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -217,7 +217,7 @@
             transform: translate(-50%, -50%);
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, rgba(139,92,246,0.04) 40%, transparent 70%);
+            background: radial-gradient(circle, rgba(165,180,252,0.06) 0%, rgba(129,140,248,0.04) 40%, transparent 70%);
             pointer-events: none;
         }
 
@@ -227,7 +227,7 @@
             gap: 8px;
             padding: 8px 20px;
             background: var(--accent-soft);
-            border: 1px solid rgba(0,212,255,0.15);
+            border: 1px solid rgba(165,180,252,0.15);
             border-radius: 100px;
             font-size: 12px;
             font-weight: 500;
@@ -306,7 +306,7 @@
 
         .btn--primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(0,212,255,0.25);
+            box-shadow: 0 12px 32px rgba(165,180,252,0.25);
         }
 
         .btn--ghost {
@@ -477,7 +477,7 @@
             color: var(--text-secondary);
             line-height: 1.9;
             padding-left: 20px;
-            border-left: 2px solid rgba(0,212,255,0.2);
+            border-left: 2px solid rgba(165,180,252,0.2);
             font-style: italic;
         }
 
@@ -526,7 +526,7 @@
         .research-item:hover {
             border-color: var(--border-accent);
             transform: translateX(6px);
-            box-shadow: -6px 0 24px rgba(0,212,255,0.06);
+            box-shadow: -6px 0 24px rgba(165,180,252,0.06);
         }
 
         .research-num {
@@ -577,7 +577,7 @@
             margin: 0 auto 16px;
             border-radius: 50%;
             background: var(--accent-soft);
-            border: 1px solid rgba(0,212,255,0.15);
+            border: 1px solid rgba(165,180,252,0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -640,7 +640,7 @@
         .loc-badge--hq {
             background: var(--accent-soft);
             color: var(--accent);
-            border: 1px solid rgba(0,212,255,0.15);
+            border: 1px solid rgba(165,180,252,0.15);
         }
 
         .loc-badge--prep {
@@ -734,7 +734,7 @@
             color: var(--accent);
             text-decoration: none;
             padding: 14px 32px;
-            border: 1px solid rgba(0,212,255,0.3);
+            border: 1px solid rgba(165,180,252,0.3);
             border-radius: var(--radius-sm);
             margin-bottom: 28px;
             transition: all var(--transition);
@@ -745,7 +745,7 @@
             background: var(--accent);
             color: var(--bg-deep);
             border-color: var(--accent);
-            box-shadow: 0 8px 28px rgba(0,212,255,0.25);
+            box-shadow: 0 8px 28px rgba(165,180,252,0.25);
         }
 
         .join-methods {
@@ -929,7 +929,7 @@
 
         .lang-toggle {
             background: var(--accent-soft);
-            border: 1px solid rgba(0,212,255,0.15);
+            border: 1px solid rgba(165,180,252,0.15);
             color: var(--accent);
             padding: 6px 16px;
             border-radius: 8px;
@@ -1260,13 +1260,13 @@
 
             // Subtle nebula glow
             const g1 = ctx.createRadialGradient(W * 0.2, H * 0.15, 0, W * 0.2, H * 0.15, W * 0.4);
-            g1.addColorStop(0, 'rgba(0,180,255,0.015)');
+            g1.addColorStop(0, 'rgba(165,180,252,0.015)');
             g1.addColorStop(1, 'transparent');
             ctx.fillStyle = g1;
             ctx.fillRect(0, 0, W, H);
 
             const g2 = ctx.createRadialGradient(W * 0.8, H * 0.85, 0, W * 0.8, H * 0.85, W * 0.35);
-            g2.addColorStop(0, 'rgba(139,92,246,0.012)');
+            g2.addColorStop(0, 'rgba(129,140,248,0.012)');
             g2.addColorStop(1, 'transparent');
             ctx.fillStyle = g2;
             ctx.fillRect(0, 0, W, H);
