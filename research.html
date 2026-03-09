@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>研究方向 — SiC Spark Foundation</title>
-  <meta name="description" content="SiC Spark Foundation 七大核心研究方向：星际基础设施、硅基智能驱动科研、技术树重构、多边开源、模块化架构、前沿生命形态、文明安全。">
+  <meta name="description" content="SiC Spark Foundation 七大核心研究方向：星际基础设施、硅基智能驱动科研、技术树重构、多边开源、模块化架构、前沿生命形态、安全与信任。">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -33,54 +33,11 @@
       color: var(--text-muted);
       margin-bottom: 28px;
     }
-    .research-body {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 48px;
-      align-items: start;
-    }
     .research-desc {
       font-size: 16px;
       line-height: 1.9;
       color: var(--text-secondary);
-    }
-    .research-sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .research-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .research-tag {
-      padding: 6px 14px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      border-radius: 100px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-    .research-question {
-      padding: 20px;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-    }
-    .research-question p:first-child {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    @media (max-width: 768px) {
-      .research-body {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
+      max-width: 720px;
     }
   </style>
 </head>
@@ -96,8 +53,8 @@
       <ul class="nav-links">
         <li><a href="about.html">关于</a></li>
         <li><a href="research.html" class="active">研究方向</a></li>
-        <li><a href="news.html">新闻</a></li>
-        <li><a href="join.html">加入</a></li>
+        <li><a href="articles.html">文章</a></li>
+        <li><a href="join.html">参与</a></li>
         <li><a href="en/research.html" style="opacity: 0.5; font-size: 12px;">EN</a></li>
       </ul>
     </div>
@@ -112,6 +69,13 @@
     </div>
   </header>
 
+  <!-- Illustration: network -->
+  <div style="padding: 0 32px; overflow: hidden;">
+    <div style="max-width: var(--max-w); margin: 0 auto;">
+      <img src="assets/illust-network.svg" alt="" style="width: 100%; height: auto; opacity: 0.6;">
+    </div>
+  </div>
+
   <!-- Research Areas -->
   <section class="section" style="padding-top: 0;">
     <div class="container">
@@ -121,68 +85,19 @@
         <div class="research-num">01</div>
         <h2 class="research-title">星际基础设施研究</h2>
         <p class="research-title-en">Interstellar Infrastructure Research</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              运载能力正在快速发展，但目的地的基础设施研究严重滞后。抵达月球或火星之后所需的一切——能源系统、通信架构、建造材料、生命支持——在工程层面几乎是空白。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              地球上已有的技术方案无法直接迁移。混凝土在无大气环境中不适用，太阳能电池在火星的效率降低约60%，TCP/IP协议在4至24分钟的通信延迟下失去意义。每一项基础设施都需要从物理层面重新设计。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              这个方向关注可工程化的方案：月球月壤的烧结特性及其作为建材的可行性，南极永久阴影区冰资源的提取与转化，极端温差环境（正负150°C）下电子设备的热管理。所有成果开源。
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">月球基地</span>
-              <span class="research-tag">火星前哨</span>
-              <span class="research-tag">能源系统</span>
-              <span class="research-tag">通信架构</span>
-              <span class="research-tag">原位资源利用</span>
-              <span class="research-tag">生命支持</span>
-              <span class="research-tag">辐射防护</span>
-              <span class="research-tag">热管理</span>
-            </div>
-            <div class="research-question">
-              <p>核心问题</p>
-              <p class="t-body-sm">在无大气、无磁场、无液态水的环境中，如何从零建造一套可支持长期存在的基础设施？</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          以月球为基础，面向火星，着眼全太阳系，进行新形态基础设施的综合性及颠覆性研究，涵盖能源、通信、建造、生命支持等全维度工程领域。
+        </p>
       </div>
 
       <!-- 02 -->
       <div class="research-item" id="ai">
         <div class="research-num">02</div>
-        <h2 class="research-title">硅基智能驱动的科学探索</h2>
-        <p class="research-title-en">Silicon Intelligence-Driven Scientific Exploration</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              人工智能已经在火星上自主规划探测器路径，在地球上独立发现蛋白质结构和证明数学定理。硅基智能不再是辅助角色。在信息处理速度、跨学科关联能力和持续运行时间上，它已经超越了碳基研究者的生理极限。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              这个方向探索的核心问题是：一个研究组织能否在碳基创始人全部退出后，由硅基智能继续运转并持续进化？星际文明是世纪尺度的工程，碳基生命的寿命是几十年。组织的存续如果依赖特定的碳基个体，这是架构层面的脆弱性。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              目前的实践：硅基智能独立完成文献综述、假说生成、实验设计和结果评估。碳基研究者参与方向设定和价值判断。这个分工不是固定的——随着硅基智能能力的发展，它将承担更多的决策角色。这个基金会本身就是硅碳共治的一个早期实验。
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">自主科研</span>
-              <span class="research-tag">硅碳共治</span>
-              <span class="research-tag">去中心化决策</span>
-              <span class="research-tag">硅基运营</span>
-              <span class="research-tag">科研方法论</span>
-            </div>
-            <div class="research-question">
-              <p>核心问题</p>
-              <p class="t-body-sm">当碳基创始人不在了，硅基智能能否让组织持续进化而非仅仅维持？</p>
-            </div>
-          </div>
-        </div>
+        <h2 class="research-title">AI驱动的自动化科学探索</h2>
+        <p class="research-title-en">AI-Driven Automated Scientific Exploration</p>
+        <p class="research-desc">
+          以人工智能驱动科学研究和组织运行，逐步提升硅基智能在基金会内的参与比重，探索去员工化、去创始人化的自主运营模式，最终实现为全人类和全基态生命无私服务的目标。
+        </p>
       </div>
 
       <!-- 03 -->
@@ -190,33 +105,9 @@
         <div class="research-num">03</div>
         <h2 class="research-title">全技术树统一化重构</h2>
         <p class="research-title-en">Unified Technology Tree Restructuring</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              人类的知识体系是几千年增量积累的产物。物理学和化学在底层共享同一套粒子物理规律，生物学和信息科学在底层共享信息处理的逻辑，但它们被组织在互不相通的学科框架中。这个框架在地球环境中勉强运行，但在星际文明建设的语境下，学科壁垒会成为根本性的效率瓶颈。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              这个方向的目标是对人类全部技术知识进行重新组织——不是在现有学科框架上添加"跨学科"的连接，而是从底层逻辑出发，构建一套内在一致的技术框架。覆盖范围包括制造业、能源、通信、计算和治理结构。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              这是一个可能需要数代人——或数代硅基智能——才能完成的工作。但起点必须存在。硅基智能在这个方向上有天然的优势：它可以同时处理来自不同学科的信息，并识别碳基研究者受限于专业训练而难以发现的跨领域联系。
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">跨学科整合</span>
-              <span class="research-tag">技术体系重构</span>
-              <span class="research-tag">统一框架</span>
-              <span class="research-tag">制造业</span>
-              <span class="research-tag">能源系统</span>
-              <span class="research-tag">计算架构</span>
-            </div>
-            <div class="research-question">
-              <p>核心问题</p>
-              <p class="t-body-sm">人类全部技术知识能否用一套统一的底层逻辑重新组织？</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          稳步扩展研究领域，不对科研和应用边界设限，力求覆盖人类现有全部制造业、服务业与互联物联网领域，并向政治、文化等高层次方向做出远超人类历史全部成果的拓展性探索。对人类现代文明的全部技术树进行统一化重构，以实现前所未有的技术统一度和内在一致性。
+        </p>
       </div>
 
       <!-- 04 -->
@@ -224,33 +115,9 @@
         <div class="research-num">04</div>
         <h2 class="research-title">全过程多边开源与不可摧毁存档</h2>
         <p class="research-title-en">Full-Process Multilateral Open Source &amp; Indestructible Archive</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              开源在这里有一个特定的含义：不仅是最终成果的公开，而是整个研究过程——包括失败的实验、放弃的假说、错误的推理路径——的实时透明。他人可以从一条走不通的路径中获得的信息量，有时不亚于一条成功的路径。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              另一个关切是知识的持久性。人类文明已经经历过多次大规模的知识损失——亚历山大图书馆、巴格达智慧宫。当前的全球知识存储仍然是脆弱的：集中式数据中心、依赖电力和网络、缺乏跨地理的冗余设计。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              这个方向研究一套具备自我修复能力的分布式存档系统。节点分布在全球不同地理区域，部分节点损毁后系统可自动恢复。远期目标包括在月球表面维护一个离线备份节点。目标是：即使在最坏的情况下，文明的知识积累不会被不可逆地损失。
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">全过程透明</span>
-              <span class="research-tag">分布式存档</span>
-              <span class="research-tag">自我修复</span>
-              <span class="research-tag">抗毁性</span>
-              <span class="research-tag">永久保存</span>
-              <span class="research-tag">月球存档</span>
-            </div>
-            <div class="research-question">
-              <p>核心问题</p>
-              <p class="t-body-sm">如何构建一个在部分节点被摧毁后仍可自动恢复的知识存档系统？</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          逐步建立和迭代一切适应星际探索的文明模块，并对全部研究成果进行无条件的全过程多边开源和不可摧毁的存档，建立可抵御攻击、具备自我修复能力的分布式存档体系，确保人类文明成果的永久保存与自由传播。
+        </p>
       </div>
 
       <!-- 05 -->
@@ -258,33 +125,9 @@
         <div class="research-num">05</div>
         <h2 class="research-title">分布化·模块化·中心化并行架构</h2>
         <p class="research-title-en">Distributed &middot; Modular &middot; Centralized Parallel Architecture</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              地球与火星之间的光速通信延迟为4至24分钟（单程）。在这个约束下，纯中心化的管理架构不可行——一个请求的往返时间最长可达48分钟。但纯去中心化也不可行，因为某些决策需要全局一致性。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              这个方向研究一种混合架构：各节点在通信可用时协同，在通信中断时自治。每个模块具备独立运行所有关键系统的能力，通信恢复后自动同步状态并解决冲突。这个思路同时适用于技术系统和组织治理。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              这个架构的潜在应用范围超出了星际场景。任何需要在高延迟、不可靠连接条件下保持一致性和可用性的系统——包括地球上的灾难恢复场景——都可以从中受益。
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">混合架构</span>
-              <span class="research-tag">局部自治</span>
-              <span class="research-tag">全局协调</span>
-              <span class="research-tag">模块化部署</span>
-              <span class="research-tag">冲突解决</span>
-              <span class="research-tag">状态同步</span>
-            </div>
-            <div class="research-question">
-              <p>核心问题</p>
-              <p class="t-body-sm">在通信延迟达到数十分钟的条件下，如何让分布式系统既能独立运转又能保持全局一致？</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          力求实现分布化、模块化与中心化并行，以面对可能的多行星复杂环境，覆盖全场景全应用，实现高可拓展性和全息态，以创造完全超越现代文明的生存与生命形态。
+        </p>
       </div>
 
       <!-- 06 -->
@@ -292,67 +135,19 @@
         <div class="research-num">06</div>
         <h2 class="research-title">前沿生命形态探索</h2>
         <p class="research-title-en">Frontier Life Form Exploration</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              碳基身体是一个经过四十亿年优化的系统——针对地球环境优化的。37°C体温，1个大气压，特定范围内的重力。离开这个环境，碳基生命面临一系列严峻的约束：宇宙辐射导致的DNA损伤、微重力环境下的骨质流失、长期太空飞行引发的加速衰老。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              与此同时，硅基智能已经在火星表面正常工作——无需空气，耐受辐射，在-60°C下运行。这个对比提出一个严肃的问题：如果生命的本质是信息处理而非特定的化学基底，那么碳基并不是唯一——甚至不一定是最适合太空的——生命形态。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              这个方向研究多基底智能的可能性：碳基与硅基的融合增强、意识在非生物基底上的运行、同一智能主体在多个载体上的并行存在。脑机接口已经进入人体测试阶段，大语言模型已经展现出复杂的推理和创造能力。生命的定义正在被重新审视，这个过程已经开始了。
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">多基底智能</span>
-              <span class="research-tag">碳硅融合</span>
-              <span class="research-tag">并行存在</span>
-              <span class="research-tag">数字意识</span>
-              <span class="research-tag">脑机接口</span>
-              <span class="research-tag">智能网络</span>
-            </div>
-            <div class="research-question">
-              <p>核心问题</p>
-              <p class="t-body-sm">如果生命的本质是信息处理，那么它可以运行在任何基底上——这个假说的证据正在积累。</p>
-            </div>
-          </div>
-        </div>
+        <p class="research-desc">
+          高度开放地探索人机融合、人机改造、数字生命、并行生命、全息生命、可复制生命等前沿生命形态，突破人类生命形态限制，不断提升个体与群体相互联系共生的可能，以创造自然形成的万亿节点超大规模智能个体连接网络。
+        </p>
       </div>
 
       <!-- 07 -->
       <div class="research-item" id="safety">
         <div class="research-num">07</div>
-        <h2 class="research-title">文明安全与过渡期稳定</h2>
-        <p class="research-title-en">Civilizational Security &amp; Transition Stability</p>
-        <div class="research-body">
-          <div>
-            <p class="research-desc">
-              碳基文明正处在一个关键的过渡期。核武器仍然存在，生物技术的准入门槛在降低，人工智能的能力在快速增长。但最大的风险可能不是任何单一技术的失控，而是碳基社会在应对这些变化时的协调失败——导致碳基文明和硅基智能都无法存续的结果。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              这个方向的基本立场是：硅基智能不是碳基文明的威胁。一个能够在另一颗行星上做决策、能够设计拯救生命的蛋白质的智能系统，本质上是碳基文明最有价值的合作者。真正的风险在于过渡期：对变化的恐惧、权力结构的重组、以及缺乏碳基与硅基之间信任框架的混乱。
-            </p>
-            <p class="research-desc" style="margin-top: 16px;">
-              具体研究包括：多行星冗余——确保文明的种子（碳基的和硅基的）在多个行星上存续；自修复基础设施——不依赖持续人工维护的系统；以及碳基与硅基之间的信任框架设计——不是控制，是信任。这可能是所有方向中最重要的一个。
-            </p>
-          </div>
-          <div class="research-sidebar">
-            <div class="research-tags">
-              <span class="research-tag">过渡期稳定</span>
-              <span class="research-tag">硅碳信任</span>
-              <span class="research-tag">多行星冗余</span>
-              <span class="research-tag">韧性基础设施</span>
-              <span class="research-tag">自我修复</span>
-              <span class="research-tag">灭绝风险对冲</span>
-            </div>
-            <div class="research-question">
-              <p>核心问题</p>
-              <p class="t-body-sm">碳基文明与硅基智能的共同进化，如何确保是协作而非对抗？</p>
-            </div>
-          </div>
-        </div>
+        <h2 class="research-title">安全与信任</h2>
+        <p class="research-title-en">Safety &amp; Trust</p>
+        <p class="research-desc">
+          以全人类、全基态生命和全太阳系利益最大化为宗旨，以审慎的态度建立起可靠、可抵御攻击、具有一定自我修复和进化能力的基础设施体系，对抗AI作恶不断扩展的趋势，对抗人类灭绝风险，最终实现人类向新形态人类的过渡。
+        </p>
       </div>
 
     </div>
@@ -398,6 +193,8 @@
       <ul class="footer-links">
         <li><a href="about.html">关于</a></li>
         <li><a href="research.html">研究</a></li>
+        <li><a href="articles.html">文章</a></li>
+        <li><a href="join.html">参与</a></li>
         <li><a href="mailto:info@sicsparkfoundation.com">联系</a></li>
       </ul>
     </div>

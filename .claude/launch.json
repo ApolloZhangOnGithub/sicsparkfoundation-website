@@ -4,9 +4,8 @@
     {
       "name": "sic-spark-site",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8888"],
-      "cwd": "/Users/zhangkezhen/Desktop/Yr4 Sem2/02 Startup 创业资源/02 SiC Spark Foundation",
-      "port": 8888
+      "runtimeArgs": ["-m", "http.server", "8080"],
+      "port": 8080
     }
   ]
 }
