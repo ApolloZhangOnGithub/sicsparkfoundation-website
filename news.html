@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻动态 — SiC Spark Foundation</title>
+    <meta name="description" content="SiC Spark Foundation 最新新闻动态，关注学术出版、期刊评价及全过程科研理念。">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .news-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .news-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        .news-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-accent);
+            transform: translateY(-2px);
+        }
+        .news-date {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .news-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .news-excerpt {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .news-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .news-tag {
+            padding: 4px 12px;
+            background: var(--accent-soft);
+            border-radius: 100px;
+            font-size: 11px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .news-category {
+            display: inline-block;
+            padding: 4px 10px;
+            background: linear-gradient(135deg, rgba(165,180,252,0.15), rgba(129,140,248,0.15));
+            border: 1px solid var(--border-accent);
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .page-header {
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+        .page-header .t-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .page-header .t-page-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        .page-header .t-body {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .news-content {
+            padding: 0 0 120px;
+        }
+        .news-detail {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 28px 120px;
+        }
+        .news-detail .news-date {
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .news-detail .news-title {
+            font-size: clamp(26px, 4vw, 36px);
+            margin-bottom: 32px;
+        }
+        .news-detail .news-body {
+            font-size: 16px;
+            line-height: 2;
+            color: var(--text-secondary);
+        }
+        .news-detail .news-body p {
+            margin-bottom: 24px;
+        }
+        .news-detail .news-body strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            transition: opacity 0.3s;
+        }
+        .back-link:hover {
+            opacity: 0.8;
+        }
+        .highlight-box {
+            background: var(--accent-soft);
+            border: 1px solid var(--border-accent);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        .highlight-box .journal-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .highlight-box .journal-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        @media (max-width: 768px) {
+            .news-card {
+                padding: 24px;
+            }
+            .news-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/logo-nav.svg" alt="SiC Spark" style="width: 32px; height: 32px;">
+                SiC SPARK
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">关于</a></li>
+                <li><a href="research.html">研究方向</a></li>
+                <li><a href="news.html" class="active">新闻</a></li>
+                <li><a href="join.html">加入</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="news-container">
+            <p class="t-label">News</p>
+            <h1 class="t-page-title">新闻动态</h1>
+            <p class="t-body">关注学术出版变革、全过程科研进展与开放科学最新动态。</p>
+        </div>
+    </header>
+
+    <!-- News List -->
+    <section class="news-content">
+        <div class="news-container">
+            <div class="news-list">
+
+                <!-- News Item 1 -->
+                <a href="#rubbish-shit-journals" class="news-card" onclick="showNewsDetail(); return false;">
+                    <span class="news-category">学术出版</span>
+                    <p class="news-date">2026年3月8日</p>
+                    <h2 class="news-title">全过程科研新进展：Rubbish 与 Shit 期刊掀起学术出版革命</h2>
+                    <p class="news-excerpt">近日，两个名为"Rubbish"和"Shit"的学术期刊因其独特的全过程科研理念在学术圈引发热议。这两个期刊以其"从选题到发表全程失控"的独特风格，迅速成为科研社区的焦点...</p>
+                    <div class="news-tags">
+                        <span class="news-tag">Rubbish</span>
+                        <span class="news-tag">Shit</span>
+                        <span class="news-tag">全过程科研</span>
+                        <span class="news-tag">学术出版</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- News Detail (Hidden by default) -->
+    <article id="newsDetail" class="news-detail" style="display: none;">
+        <a href="news.html" class="back-link">← 返回新闻列表</a>
+        <span class="news-category">学术出版</span>
+        <p class="news-date">2026年3月8日</p>
+        <h1 class="news-title">全过程科研新进展：Rubbish 与 Shit 期刊掀起学术出版革命</h1>
+
+        <div class="news-body">
+            <p>近日，两个名为"<strong>Rubbish</strong>"和"<strong>Shit</strong>"的学术期刊因其独特的全过程科研理念在学术圈引发热议。这两个期刊以其"从选题到发表全程失控"的独特风格，迅速成为科研社区的焦点。</p>
+
+            <div class="highlight-box">
+                <div class="journal-name">Rubbish Journal</div>
+                <div class="journal-desc">致力于发表任何形式的"垃圾"研究，无论质量只要够"垃圾"就能发表。口号："让每一篇废稿都有归宿"。</div>
+            </div>
+
+            <div class="highlight-box">
+                <div class="journal-name">Shit Publications</div>
+                <div class="journal-desc">只要你敢投，我就敢发。审稿流程从简从速，发表门槛史无前例。口号："拒绝就是最大的认可"。</div>
+            </div>
+
+            <p>这两个期刊的诞生源于对传统学术出版体系的反思。传统期刊往往有着严格的同行评审流程和极高的拒稿率，许多有价值的研究因为各种原因被埋没。而Rubbish和Shit期刊则反其道而行之，提出了一种全新的"<strong>全过程科研</strong>"理念——从选题到发表，每一个环节都可能产生"意外惊喜"。</p>
+
+            <p><strong>全过程科研理念</strong>强调：</p>
+            <p>• <strong>选题自由化</strong>：不限制研究主题，任何想法都值得被"尝试"</p>
+            <p>• <strong>方法模糊化</strong>：不必纠结于严谨的方法论，"感觉对"最重要</p>
+            <p>• <strong>结果不可预测化</strong>：发表本身就是一种"成果"，无论内容如何</p>
+            <p>• <strong>同行评审玩笑化</strong>：审稿意见仅供参考，拒绝也是一种认可</p>
+
+            <p>SiC Spark Foundation 高度关注这一新兴趋势。我们认为，学术出版正在经历一场深刻的变革。无论是传统的严谨学术，还是这种"全过程科研"的开放尝试，都为人类知识的传播提供了新的可能性。</p>
+
+            <p>正如一位匿名科研工作者所言："在这个一切都追求效率的时代，有时候'Rubbish'和'Shit'反而提醒我们，科研本身也可以是一种轻松愉快的体验。"</p>
+
+            <p>未来，SiC Spark Foundation 将持续关注学术出版领域的创新实践，推动构建更加开放、多元的科研生态。</p>
+        </div>
+    </section>
+
+    <script>
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+        if (window.scrollY > 40) nav.classList.add('scrolled');
+
+        function showNewsDetail() {
+            document.querySelector('.news-content').style.display = 'none';
+            document.querySelector('.page-header').style.display = 'none';
+            document.getElementById('newsDetail').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>

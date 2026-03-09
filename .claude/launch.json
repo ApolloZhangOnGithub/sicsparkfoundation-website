@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "sic-spark-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8888"],
+      "cwd": "/Users/zhangkezhen/Desktop/Yr4 Sem2/02 Startup 创业资源/02 SiC Spark Foundation",
+      "port": 8888
+    }
+  ]
+}

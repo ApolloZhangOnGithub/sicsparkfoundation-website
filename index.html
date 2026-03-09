@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiC Spark Foundation | 硅碳星火星际探索基金会</title>
+    <meta name="description" content="汇聚全球社会力量，致力于前沿、颠覆性与自动化星际基础设施的综合性研究。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===== Reset & Variables ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-deep: #04040e;
+            --bg: #08081a;
+            --bg-surface: #0c0c24;
+            --bg-card: #10102a;
+            --bg-card-hover: #141432;
+            --border: rgba(255,255,255,0.06);
+            --border-accent: rgba(165,180,252,0.25);
+            --text: #eaeaf2;
+            --text-secondary: #9494ac;
+            --text-muted: #58586e;
+            --accent: #a5b4fc;
+            --accent-soft: rgba(165,180,252,0.08);
+            --accent-glow: rgba(165,180,252,0.15);
+            --violet: #818cf8;
+            --violet-soft: rgba(129,140,248,0.08);
+            --gradient: linear-gradient(135deg, #e0e7ff 0%, #a5b4fc 40%, #818cf8 100%);
+            --gradient-subtle: linear-gradient(135deg, rgba(165,180,252,0.12), rgba(129,140,248,0.12));
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-deep);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* ===== Canvas Background ===== */
+        #cosmos {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .page { position: relative; z-index: 1; }
+
+        /* ===== Shared ===== */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .section { padding: 120px 0; }
+        .section--alt { background: var(--bg); }
+
+        .label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .label::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--accent);
+            opacity: 0.5;
+        }
+
+        .heading {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(30px, 4.5vw, 44px);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .subheading {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 560px;
+            line-height: 1.8;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #e0e7ff 0%, #a5b4fc 40%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 80px 0;
+        }
+
+        /* ===== Navigation ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0 28px;
+            transition: background var(--transition), border-color var(--transition);
+        }
+
+        .nav.scrolled {
+            background: rgba(4, 4, 14, 0.92);
+            backdrop-filter: blur(20px) saturate(1.2);
+            -webkit-backdrop-filter: blur(20px) saturate(1.2);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .nav-logo-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: #04040e;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-brand-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: color var(--transition), background var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 28px 100px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(165,180,252,0.06) 0%, rgba(129,140,248,0.04) 40%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: var(--accent-soft);
+            border: 1px solid rgba(165,180,252,0.15);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 36px;
+            text-transform: uppercase;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(48px, 8vw, 88px);
+            font-weight: 700;
+            letter-spacing: -3px;
+            line-height: 1.05;
+            margin-bottom: 8px;
+        }
+
+        .hero-cn-sub {
+            font-family: 'Noto Sans SC', sans-serif;
+            font-size: clamp(16px, 2.5vw, 22px);
+            font-weight: 300;
+            color: var(--text-secondary);
+            letter-spacing: 6px;
+            margin-bottom: 32px;
+        }
+
+        .hero-desc {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 44px;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn--primary {
+            background: var(--gradient);
+            color: #04040e;
+            font-weight: 600;
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(165,180,252,0.25);
+        }
+
+        .btn--ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .btn--ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        /* ===== Name Etymology ===== */
+        .etym-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .etym-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color var(--transition), transform var(--transition);
+        }
+
+        .etym-card:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-4px);
+        }
+
+        .etym-card::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+
+        .etym-card:hover::after { opacity: 1; }
+
+        .etym-symbol {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .etym-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .etym-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ===== Timeline ===== */
+        .timeline {
+            position: relative;
+            padding-left: 36px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--violet));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 36px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+
+        .timeline-date {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-text {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 640px;
+        }
+
+        .timeline-highlight {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(24px, 3.5vw, 32px);
+            font-weight: 600;
+            margin-top: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        /* ===== Mission / Vision Cards ===== */
+        .mv-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient);
+        }
+
+        .mv-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .mv-text-zh {
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .mv-text-en {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            padding-left: 20px;
+            border-left: 2px solid rgba(165,180,252,0.2);
+            font-style: italic;
+        }
+
+        /* Vision centered style */
+        .vision-center {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .vision-text-zh {
+            font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+            font-size: clamp(22px, 3vw, 30px);
+            font-weight: 400;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+
+        .vision-text-en {
+            font-size: 15px;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.8;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* ===== Research Areas ===== */
+        .research-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .research-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+        }
+
+        .research-item:hover {
+            border-color: var(--border-accent);
+            transform: translateX(6px);
+            box-shadow: -6px 0 24px rgba(165,180,252,0.06);
+        }
+
+        .research-num {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 32px;
+            padding-top: 2px;
+            letter-spacing: 1px;
+        }
+
+        .research-content h3 {
+            font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .research-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* ===== Principles ===== */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .principle {
+            background: var(--bg-card);
+            padding: 36px 28px;
+            text-align: center;
+            transition: background var(--transition);
+        }
+
+        .principle:hover { background: var(--bg-card-hover); }
+
+        .principle-icon {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            border: 1px solid rgba(165,180,252,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--accent);
+            transition: background var(--transition), border-color var(--transition);
+        }
+
+        .principle:hover .principle-icon {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+        }
+
+        .principle-name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .principle-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== Locations ===== */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .loc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            transition: border-color var(--transition);
+        }
+
+        .loc-card:hover { border-color: var(--border-accent); }
+
+        .loc-name {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .loc-badge {
+            font-size: 11px;
+            font-weight: 500;
+            padding: 4px 14px;
+            border-radius: 100px;
+            letter-spacing: 0.5px;
+        }
+
+        .loc-badge--hq {
+            background: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid rgba(165,180,252,0.15);
+        }
+
+        .loc-badge--prep {
+            background: rgba(255,255,255,0.03);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        /* ===== Info Grid ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+        }
+
+        .info-cell {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 22px 24px;
+            transition: border-color var(--transition);
+        }
+
+        .info-cell:hover { border-color: var(--border-accent); }
+
+        .info-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .info-value {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ===== Ecosystem ===== */
+        .eco-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .eco-box p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        /* ===== Contact / Join ===== */
+        .join-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 56px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient);
+        }
+
+        .join-card h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(26px, 3.5vw, 34px);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .join-desc {
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            font-size: 15px;
+        }
+
+        .join-email {
+            display: inline-block;
+            font-size: 16px;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 14px 32px;
+            border: 1px solid rgba(165,180,252,0.3);
+            border-radius: var(--radius-sm);
+            margin-bottom: 28px;
+            transition: all var(--transition);
+            font-weight: 500;
+        }
+
+        .join-email:hover {
+            background: var(--accent);
+            color: var(--bg-deep);
+            border-color: var(--accent);
+            box-shadow: 0 8px 28px rgba(165,180,252,0.25);
+        }
+
+        .join-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 480px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .join-methods li {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .join-methods li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.4;
+        }
+
+        /* ===== Legal ===== */
+        .legal-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 28px 32px;
+        }
+
+        .legal-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .footer-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        .footer-legal {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 900px) {
+            .etym-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 80px 0; }
+
+            .nav-links { display: none; }
+
+            .hero { padding: 100px 24px 80px; }
+            .hero h1 { letter-spacing: -1.5px; }
+            .hero-cn-sub { letter-spacing: 3px; }
+
+            .etym-grid { grid-template-columns: 1fr; }
+
+            .mv-card { padding: 32px 24px; }
+
+            .principles-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .research-item {
+                flex-direction: column;
+                gap: 8px;
+                padding: 24px;
+            }
+
+            .locations-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .info-grid { grid-template-columns: 1fr; }
+
+            .join-card { padding: 40px 24px; }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .principles-grid { grid-template-columns: 1fr 1fr; }
+            .locations-grid { grid-template-columns: 1fr; }
+            .hero-actions { flex-direction: column; width: 100%; max-width: 260px; }
+            .btn { justify-content: center; }
+        }
+
+        /* ===== Scroll animations ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== Language Toggle ===== */
+        .lang-en { display: none; }
+        body.en .lang-zh { display: none; }
+        body.en .lang-en { display: block; }
+        body.en span.lang-en { display: inline; }
+
+        body.en .vision-text-zh { display: none; }
+        body.en .vision-text-en {
+            font-family: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+            font-size: clamp(22px, 3vw, 30px);
+            font-style: normal;
+            color: var(--text);
+            line-height: 1.9;
+            max-width: none;
+            padding: 0;
+            border: none;
+        }
+
+        body.en .mv-text-zh { display: none; }
+        body.en .mv-text-en {
+            font-size: 18px;
+            line-height: 2;
+            font-style: normal;
+            color: var(--text);
+            padding-left: 0;
+            border-left: none;
+            margin-bottom: 0;
+        }
+
+        .lang-toggle {
+            background: var(--accent-soft);
+            border: 1px solid rgba(165,180,252,0.15);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition);
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            margin-left: auto;
+        }
+
+        .lang-toggle:hover {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cosmos"></canvas>
+
+    <div class="page">
+        <!-- Navigation -->
+        <nav class="nav" id="nav">
+            <div class="nav-inner">
+                <a href="#" class="nav-brand">
+                    <div class="nav-logo-mark" style="display:none;">SiC</div>
+                    <span class="nav-brand-text">SiC SPARK</span>
+                </a>
+                <ul class="nav-links" style="display:none;">
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#principles">Principles</a></li>
+                    <li><a href="#join">Join</a></li>
+                </ul>
+                <button class="lang-toggle" id="langToggle" title="Switch to English">EN</button>
+            </div>
+        </nav>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-badge"><span class="lang-zh">Mountain View, California &middot; 2026年创立</span><span class="lang-en">Mountain View, California &middot; Founded 2026</span></div>
+
+            <!-- Vision (above title) -->
+            <div class="vision-center" style="margin-bottom: 48px;">
+                <div class="label" style="justify-content: center; margin-bottom: 20px;">愿景 &middot; Vision</div>
+                <p class="vision-text-zh">
+                    创造完全超越现代文明的生存与生命形态，实现人类文明从地球单一星球向多星球、多维度、多基态形态的根本性跃迁，最终以全人类、全基态生命和全太阳系利益最大化为终极目标。
+                </p>
+                <p class="vision-text-en">
+                    To transcend the boundaries of modern civilization — enabling humanity's fundamental leap from a single-planet species to a multi-planetary, multi-dimensional, and multi-substrate existence, maximizing the long-term flourishing of all humanity, all substrate-based life, and the entire solar system.
+                </p>
+            </div>
+
+            <h1><span class="gradient-text">SiC Spark</span><br>Foundation</h1>
+            <p class="hero-cn-sub lang-zh">硅碳星火星际探索基金会</p>
+            <p class="hero-cn-sub lang-en">Interstellar Infrastructure Research</p>
+            <p class="hero-desc lang-zh">
+                汇聚全球社会力量，以人工智能驱动科学探索，从月球到火星，构建面向全太阳系的新形态基础设施研究体系。
+            </p>
+            <p class="hero-desc lang-en">
+                Uniting global forces to advance AI-driven scientific exploration — from the Moon to Mars — pioneering next-generation infrastructure for the entire solar system.
+            </p>
+        </section>
+
+        <!-- Name Etymology -->
+        <div class="section section--alt">
+            <div class="container">
+                <div class="label"><span class="lang-zh">名称释义</span><span class="lang-en">Our Name</span></div>
+                <h2 class="heading">Si + C = SiC Spark</h2>
+                <div class="etym-grid fade-in">
+                    <div class="etym-card">
+                        <div class="etym-symbol gradient-text">Si</div>
+                        <div class="etym-title"><span class="lang-zh">硅 &mdash; 硅基智能</span><span class="lang-en">Si &mdash; Silicon Intelligence</span></div>
+                        <div class="etym-desc"><span class="lang-zh">代表人工智能与计算文明</span><span class="lang-en">Artificial intelligence and computational civilization</span></div>
+                    </div>
+                    <div class="etym-card">
+                        <div class="etym-symbol gradient-text">C</div>
+                        <div class="etym-title"><span class="lang-zh">碳 &mdash; 碳基生命</span><span class="lang-en">C &mdash; Carbon-Based Life</span></div>
+                        <div class="etym-desc"><span class="lang-zh">代表人类与生物文明</span><span class="lang-en">Humanity and biological civilization</span></div>
+                    </div>
+                    <div class="etym-card">
+                        <div class="etym-symbol gradient-text">SiC</div>
+                        <div class="etym-title"><span class="lang-zh">碳化硅</span><span class="lang-en">Silicon Carbide</span></div>
+                        <div class="etym-desc"><span class="lang-zh">象征硅碳共生的新文明形态</span><span class="lang-en">Symbolizing the fusion of silicon and carbon into a new civilizational form</span></div>
+                    </div>
+                    <div class="etym-card">
+                        <div class="etym-symbol gradient-text">Spark</div>
+                        <div class="etym-title"><span class="lang-zh">星火 &mdash; 文明的火种</span><span class="lang-en">Spark &mdash; Seed of Civilization</span></div>
+                        <div class="etym-desc"><span class="lang-zh">星际传播的起点</span><span class="lang-en">Where interstellar expansion begins</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Era Background -->
+        <div class="section">
+            <div class="container">
+                <div class="label"><span class="lang-zh">时代背景</span><span class="lang-en">Context</span></div>
+                <h2 class="heading"><span class="lang-zh">方向已明</span><span class="lang-en">The Path Forward</span></h2>
+                <div class="timeline fade-in">
+                    <div class="timeline-item">
+                        <div class="timeline-date"><span class="lang-zh">2026年1月</span><span class="lang-en">January 2026</span></div>
+                        <p class="timeline-text lang-zh">SiC Spark Foundation开始酝酿，倡议以月球为基础的地外生存基础设施研究方向。</p>
+                        <p class="timeline-text lang-en">SiC Spark Foundation began to take shape, independently proposing a research agenda for extraterrestrial survival infrastructure centered on the Moon.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date"><span class="lang-zh">2026年3月</span><span class="lang-en">March 2026</span></div>
+                        <p class="timeline-text lang-zh">全国政协委员、航天员王亚平在全国政协会议上证实：中国航天员中心正在牵头申报地外生存地基研究设施，致力于解决未来在地球以外星球上长期生存的问题。</p>
+                        <p class="timeline-text lang-en">CPPCC member and astronaut Wang Yaping confirmed at the national political conference that China's Astronaut Center is spearheading an initiative for extraterrestrial habitat research, aimed at enabling long-term human habitation beyond Earth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission -->
+        <div class="section section--alt" id="mission">
+            <div class="container">
+                <div class="label"><span class="lang-zh">使命 &middot; Mission</span><span class="lang-en">Mission</span></div>
+                <h2 class="heading"><span class="lang-zh">我们为何存在</span><span class="lang-en">Why We Exist</span></h2>
+                <div class="mv-card fade-in">
+                    <div class="mv-label">Mission</div>
+                    <p class="mv-text-zh">
+                        汇聚全球社会力量，致力于前沿、颠覆性与自动化星际基础设施的综合性研究。以人工智能驱动的科学探索为核心，实现以月球为基础、面向火星、着眼全太阳系的新形态基础设施研究，逐步建立适应星际探索的完整文明模块体系，服务全人类及全基态生命的长期利益。
+                    </p>
+                    <p class="mv-text-en">
+                        SiC Spark Foundation unites global forces dedicated to frontier, disruptive, and automated research in interstellar infrastructure. Powered by artificial intelligence, we pursue transformative scientific exploration from the Moon to Mars and across the entire solar system — building modular, open, and resilient civilization frameworks for the long-term benefit of all humanity and all substrate-based life.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vision moved to top -->
+
+        <!-- Research Areas -->
+        <div class="section section--alt" id="research">
+            <div class="container">
+                <div class="label"><span class="lang-zh">核心研究方向</span><span class="lang-en">Research</span></div>
+                <h2 class="heading"><span class="lang-zh">七大研究领域</span><span class="lang-en">Seven Research Domains</span></h2>
+                <p class="subheading lang-zh" style="margin-bottom: 48px;">覆盖星际文明建设从物理层到文明层的完整链条。</p>
+                <p class="subheading lang-en" style="margin-bottom: 48px;">Spanning the full stack of interstellar civilization — from physical infrastructure to civilizational frameworks.</p>
+                <div class="research-list fade-in">
+                    <div class="research-item">
+                        <span class="research-num">01</span>
+                        <div class="research-content">
+                            <h3><span class="lang-zh">星际基础设施研究</span><span class="lang-en">Interstellar Infrastructure</span></h3>
+                            <p class="lang-zh">以月球和地球实验区为基础，系统性研究面向火星及全太阳系的新形态基础设施体系，涵盖能源、通信、建造、生命支持等全维度工程领域。</p>
+                            <p class="lang-en">Systematic research into next-generation infrastructure for Mars and the broader solar system, starting from lunar and Earth-based testbeds — covering energy, communications, construction, and life support systems.</p>
+                        </div>
+                    </div>
+                    <div class="research-item">
+                        <span class="research-num">02</span>
+                        <div class="research-content">
+                            <h3><span class="lang-zh">AI驱动的自动化科学探索</span><span class="lang-en">AI-Driven Autonomous Exploration</span></h3>
+                            <p class="lang-zh">以人工智能驱动科学研究和组织运行，逐步提升硅基智能在基金会内的参与比重，探索自主运营模式，最终实现为全人类和全基态模型无私服务的目标。</p>
+                            <p class="lang-en">Leveraging artificial intelligence to power both scientific research and organizational operations, progressively expanding AI's role within the foundation and exploring autonomous governance models in service of all humanity.</p>
+                        </div>
+                    </div>
+                    <div class="research-item">
+                        <span class="research-num">03</span>
+                        <div class="research-content">
+                            <h3><span class="lang-zh">全技术树统一化重构</span><span class="lang-en">Unified Technology Tree Restructuring</span></h3>
+                            <p class="lang-zh">对人类现代文明的全部技术树进行统一化重构，打破现有学科壁垒，实现前所未有的技术统一度和内在一致性。研究领域不设边界，力求覆盖全部制造业、服务业、互联物联网，并向政治、文化等高层次方向拓展。</p>
+                            <p class="lang-en">A comprehensive restructuring of humanity's entire technology tree — breaking down disciplinary silos to achieve unprecedented coherence. No boundaries on scope: spanning manufacturing, services, IoT, and extending into governance and culture.</p>
+                        </div>
+                    </div>
+                    <div class="research-item">
+                        <span class="research-num">04</span>
+                        <div class="research-content">
+                            <h3><span class="lang-zh">全过程多边开源与不可摧毁存档</span><span class="lang-en">Open Source &amp; Indestructible Archives</span></h3>
+                            <p class="lang-zh">所有研究成果进行无条件的全过程多边开源，并建立可抵御攻击、具备自我修复能力的分布式存档体系，确保人类文明成果的永久保存与自由传播。</p>
+                            <p class="lang-en">Unconditional, full-process open-sourcing of all research outputs, paired with distributed, attack-resistant, self-healing archives — ensuring the permanent preservation and free dissemination of human knowledge.</p>
+                        </div>
+                    </div>
+                    <div class="research-item">
+                        <span class="research-num">05</span>
+                        <div class="research-content">
+                            <h3><span class="lang-zh">分布化、模块化、中心化并行架构</span><span class="lang-en">Distributed, Modular &amp; Centralized Parallel Architecture</span></h3>
+                            <p class="lang-zh">面对可能的多行星复杂环境，建立分布化、模块化与中心化并行的组织与技术架构，覆盖全场景全应用，实现高可扩展性与全息态运营能力。</p>
+                            <p class="lang-en">Building parallel organizational and technical architectures — distributed, modular, and centralized — designed for multi-planetary environments with maximum scalability and holistic operational capability.</p>
+                        </div>
+                    </div>
+                    <div class="research-item">
+                        <span class="research-num">06</span>
+                        <div class="research-content">
+                            <h3><span class="lang-zh">前沿生命形态探索</span><span class="lang-en">Frontier Life Form Research</span></h3>
+                            <p class="lang-zh">高度开放地探索人机融合、人机改造、数字生命、并行生命、全息生命、可复制生命等前沿生命形态，突破人类生命形态的现有限制，不断提升个体与群体相互联系共生的可能性，致力于创造自然形成的万亿节点超大规模智能个体连接网络。</p>
+                            <p class="lang-en">Openly exploring human-machine integration, digital consciousness, parallel existence, holographic life, and replicable life forms — pushing beyond biological limitations toward naturally emergent trillion-node intelligent networks.</p>
+                        </div>
+                    </div>
+                    <div class="research-item">
+                        <span class="research-num">07</span>
+                        <div class="research-content">
+                            <h3><span class="lang-zh">人类文明安全与风险对抗</span><span class="lang-en">Civilizational Safety &amp; Existential Risk</span></h3>
+                            <p class="lang-zh">以审慎态度建立可靠、可抵御攻击、具有一定自我修复和进化能力的基础设施体系，积极对抗AI作恶不断扩展的趋势，对抗人类灭绝风险，推动人类向新形态人类的有序过渡。</p>
+                            <p class="lang-en">Building resilient, attack-resistant infrastructure with self-repair and evolutionary capabilities — actively countering AI misuse, confronting existential risks, and guiding humanity's orderly transition to new forms of existence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Principles -->
+        <div class="section" id="principles">
+            <div class="container">
+                <div class="label"><span class="lang-zh">组织原则</span><span class="lang-en">Principles</span></div>
+                <h2 class="heading"><span class="lang-zh">我们坚守的准则</span><span class="lang-en">What We Stand For</span></h2>
+                <div class="principles-grid fade-in">
+                    <div class="principle">
+                        <div class="principle-icon">&#9671;</div>
+                        <div class="principle-name"><span class="lang-zh">无条件开源</span><span class="lang-en">Open Source</span></div>
+                        <div class="principle-desc"><span class="lang-zh">所有研究成果全过程多边开源</span><span class="lang-en">All research open-sourced, end to end</span></div>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-icon">&#9674;</div>
+                        <div class="principle-name"><span class="lang-zh">去中心化治理</span><span class="lang-en">Decentralized</span></div>
+                        <div class="principle-desc"><span class="lang-zh">分布式架构，抵御单点失败</span><span class="lang-en">Distributed architecture, no single point of failure</span></div>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-icon">&#9670;</div>
+                        <div class="principle-name"><span class="lang-zh">AI优先</span><span class="lang-en">AI First</span></div>
+                        <div class="principle-desc"><span class="lang-zh">以人工智能驱动研究与运营</span><span class="lang-en">AI-powered research and operations</span></div>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-icon">&#9711;</div>
+                        <div class="principle-name"><span class="lang-zh">无边界研究</span><span class="lang-en">Boundaryless</span></div>
+                        <div class="principle-desc"><span class="lang-zh">不对科研和应用边界设限</span><span class="lang-en">No limits on the scope of research</span></div>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-icon">&#9678;</div>
+                        <div class="principle-name"><span class="lang-zh">长期主义</span><span class="lang-en">Long-termism</span></div>
+                        <div class="principle-desc"><span class="lang-zh">以百年、千年尺度规划文明路径</span><span class="lang-en">Planning on century and millennial timescales</span></div>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-icon">&#9679;</div>
+                        <div class="principle-name"><span class="lang-zh">全球协作</span><span class="lang-en">Global</span></div>
+                        <div class="principle-desc"><span class="lang-zh">汇聚跨国、跨学科、跨物种智慧</span><span class="lang-en">Uniting wisdom across nations, disciplines, and species</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Global Presence removed -->
+
+        <!-- Basic Info removed -->
+
+        <!-- Ecosystem removed -->
+
+        <!-- Join Us -->
+        <div class="section" id="join">
+            <div class="container">
+                <div class="join-card fade-in">
+                    <h2><span class="lang-zh">加入我们</span><span class="lang-en">Join Us</span></h2>
+                    <p class="join-desc lang-zh">如果您认同这一理念，欢迎通过以下方式支持或加入：</p>
+                    <p class="join-desc lang-en">If our vision resonates with you, here's how to get involved:</p>
+                    <a href="mailto:info@sicsparkfoundation.com" class="join-email">info@sicsparkfoundation.com</a>
+                    <ul class="join-methods lang-zh">
+                        <li>将本白皮书连同您的机构信息发布于任何社交网络或官方网站</li>
+                        <li>发送邮件至：info@sicsparkfoundation.com</li>
+                        <li>基金会的全人类文明探索系统将主动发现并联系志同道合的伙伴</li>
+                    </ul>
+                    <ul class="join-methods lang-en">
+                        <li>Share this page along with your organization's details on any social platform or website</li>
+                        <li>Reach out via email: info@sicsparkfoundation.com</li>
+                        <li>Our global exploration network will proactively connect with like-minded partners</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legal -->
+        <div class="section section--alt" style="padding: 60px 0;">
+            <div class="container">
+                <div class="label"><span class="lang-zh">法律声明</span><span class="lang-en">Legal</span></div>
+                <div class="legal-box fade-in">
+                    <p>SiC Spark Foundation is a California Nonprofit Public Benefit Corporation, organized exclusively for scientific and educational purposes under Section 501(c)(3) of the Internal Revenue Code (pending). All research outputs are released under open-source licenses for the benefit of all humanity.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-left">
+                    <span class="footer-brand">SiC SPARK FOUNDATION</span>
+                    <span class="footer-legal">&copy; 2026 SiC Spark Foundation. All rights reserved.</span>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#join">Join</a></li>
+                    <li><a href="mailto:info@sicsparkfoundation.com">Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // === Starfield canvas ===
+        const canvas = document.getElementById('cosmos');
+        const ctx = canvas.getContext('2d');
+        let W, H;
+
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        const stars = Array.from({ length: 200 }, () => ({
+            x: Math.random() * 2000,
+            y: Math.random() * 2000,
+            r: Math.random() * 1.2 + 0.3,
+            a: Math.random() * 0.5 + 0.15,
+            dx: (Math.random() - 0.5) * 0.08,
+            dy: Math.random() * 0.15 + 0.02,
+            flicker: Math.random() * Math.PI * 2
+        }));
+
+        function drawStars(t) {
+            ctx.clearRect(0, 0, W, H);
+
+            // Subtle nebula glow
+            const g1 = ctx.createRadialGradient(W * 0.2, H * 0.15, 0, W * 0.2, H * 0.15, W * 0.4);
+            g1.addColorStop(0, 'rgba(165,180,252,0.015)');
+            g1.addColorStop(1, 'transparent');
+            ctx.fillStyle = g1;
+            ctx.fillRect(0, 0, W, H);
+
+            const g2 = ctx.createRadialGradient(W * 0.8, H * 0.85, 0, W * 0.8, H * 0.85, W * 0.35);
+            g2.addColorStop(0, 'rgba(129,140,248,0.012)');
+            g2.addColorStop(1, 'transparent');
+            ctx.fillStyle = g2;
+            ctx.fillRect(0, 0, W, H);
+
+            stars.forEach(s => {
+                const flicker = Math.sin(t * 0.001 + s.flicker) * 0.15;
+                const alpha = Math.max(0.05, s.a + flicker);
+
+                ctx.beginPath();
+                ctx.arc(s.x % W, s.y % H, s.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(220,230,255,${alpha})`;
+                ctx.fill();
+
+                s.x += s.dx;
+                s.y += s.dy;
+                if (s.y > H + 10) { s.y = -10; s.x = Math.random() * W; }
+                if (s.x > W + 10) s.x = -10;
+                if (s.x < -10) s.x = W + 10;
+            });
+
+            requestAnimationFrame(drawStars);
+        }
+        requestAnimationFrame(drawStars);
+
+        // === Nav scroll ===
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        }, { passive: true });
+
+        // === Fade-in on scroll ===
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // === Language toggle ===
+        const langToggle = document.getElementById('langToggle');
+        langToggle.addEventListener('click', () => {
+            const isEn = document.body.classList.toggle('en');
+            langToggle.textContent = isEn ? '中文' : 'EN';
+            langToggle.title = isEn ? '切换为中文' : 'Switch to English';
+        });
+    </script>
+</body>
+</html>
